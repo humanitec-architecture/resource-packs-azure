@@ -9,16 +9,19 @@ client_secret = ""
 dns_zone = ""
 
 # Name of the example application.
-name = ""
+name = "hum-rp-dns-example"
 
-# The id of the hosted zone in which this record set will reside.
+# Prefix of the created resources
+prefix = "hum-rp-dns-ex-"
+
+# Specifies the Name of the Resource Group within which this dns will reside.
 resource_group_name = ""
 
 # Azure Resource Pack git branch.
 resource_packs_azure_rev = "refs/heads/main"
 
 # Azure Resource Pack git url.
-resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-azure.git"
 
 # The Subscription ID which should be used.
 subscription_id = ""
