@@ -1,0 +1,35 @@
+app_id = ""
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+# The id of the hosted zone in which this record set will reside.
+dns_zone = ""
+
+env_id = ""
+
+# The IPv4 address that the DNS name should resolve to.
+ip_address = ""
+
+# The IPv6 address that the DNS name should resolve to.
+ipv6_address = ""
+
+# A valid fully qualified domain name that the DNS name should resolve to.
+name = ""
+
+res_id = ""
+
+# The id of the hosted zone in which this record set will reside.
+resource_group_name = ""
+
+# The subdomain of the DNS name that the DNS record is for.
+subdomain = ""
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""

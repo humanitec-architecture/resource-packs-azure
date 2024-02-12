@@ -1,0 +1,27 @@
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+# The id of the hosted zone in which this record set will reside.
+dns_zone = ""
+
+# Prefix for all resources.
+prefix = ""
+
+# The id of the hosted zone in which this record set will reside.
+resource_group_name = ""
+
+# Azure Resource Pack git branch.
+resource_packs_azure_rev = "refs/heads/main"
+
+# Azure Resource Pack git url.
+resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""
