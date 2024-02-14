@@ -1,0 +1,41 @@
+app_id = ""
+
+# The size of the Redis cache to deploy.
+capacity = 2
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+# Enable the non-SSL port
+enable_non_ssl_port = false
+
+env_id = ""
+
+# The SKU family/pricing group to use.
+family = "C"
+
+# The minimum TLS version.
+minimum_tls_version = "1.2"
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies the prefix used in default name for created resources.
+prefix = "hum-rp-mysql-ex-"
+
+res_id = ""
+
+# Specifies the Name of the Resource Group within which this database will reside.
+resource_group_name = ""
+
+# The SKU of Redis to use.
+sku_name = "Standard"
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""
