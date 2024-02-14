@@ -1,0 +1,69 @@
+
+# The Administrator login for the PostgreSQL Server.
+administrator_login = ""
+
+# The Password associated with the administrator_login for the PostgreSQL Server.
+administrator_login_password = ""
+
+# Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only.
+auto_grow_enabled = true
+
+# Backup retention days for the server, supported values are between 7 and 35 days.
+backup_retention_days = 7
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+# Turn Geo-redundant server backups on/off.
+geo_redundant_backup_enabled = true
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies the version of PostgreSQL to use.
+postgres_version = "11"
+
+# Specifies the prefix used in default name for created resources.
+prefix = "hum-rp-postgres-ex-"
+
+# Whether or not public network access is allowed for this server.
+public_network_access_enabled = false
+
+# Specifies the Name of the Resource Group within which this database will reside.
+resource_group_name = ""
+
+# Azure Resource Pack git branch.
+resource_packs_azure_rev = "refs/heads/main"
+
+# Azure Resource Pack git url.
+resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+
+# Specifies the SKU Name for this PostgreSQL Server.
+sku_name = "GP_Gen5_4"
+
+# Specifies if SSL should be enforced on connections.
+ssl_enforcement_enabled = true
+
+# The minimum TLS version to support on the sever.
+ssl_minimal_tls_version_enforced = "TLS1_2"
+
+# Max storage allowed for a server.
+storage_mb = 640000
+
+# The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint.
+subnet_name = ""
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""
+
+# The name of the virtual network where Private Endpoint will be allocated.
+virtual_network_name = ""
+
+# Specifies the Name of the Resource Group within which the Private Endpoint should exist.
+virtual_network_resource_group_name = ""

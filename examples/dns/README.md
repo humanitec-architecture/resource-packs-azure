@@ -32,10 +32,11 @@
 | client\_id | The Client ID which should be used. | `string` | n/a | yes |
 | client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | dns\_zone | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
-| name | Name of the example application. | `string` | n/a | yes |
-| resource\_group\_name | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which this dns will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
+| name | Name of the example application. | `string` | `"hum-rp-dns-example"` | no |
+| prefix | Prefix of the created resources | `string` | `"hum-rp-dns-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
-| resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
+| resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |
 <!-- END_TF_DOCS -->

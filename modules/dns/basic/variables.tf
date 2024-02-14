@@ -37,7 +37,7 @@ variable "dns_zone" {
 }
 
 variable "resource_group_name" {
-  description = "The id of the hosted zone in which this record set will reside."
+  description = "Specifies the Name of the Resource Group within which this dns will reside."
   type        = string
 }
 

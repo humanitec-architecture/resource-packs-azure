@@ -11,7 +11,7 @@ dns_zone = ""
 # Prefix for all resources.
 prefix = ""
 
-# The id of the hosted zone in which this record set will reside.
+# Specifies the Name of the Resource Group within which this dns will reside.
 resource_group_name = ""
 
 # Azure Resource Pack git branch.
