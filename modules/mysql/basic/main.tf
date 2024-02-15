@@ -68,4 +68,12 @@ resource "azurerm_private_endpoint" "endpoint" {
     subresource_names              = ["mysqlServer"]
     is_manual_connection           = false
   }
+
+  tags = {
+    "managed-by" = "terraform"
+    "humanitec"  = "true"
+    "hum-app"    = var.app_id
+    "hum-env"    = var.env_id
+    "hum-res"    = var.res_id
+  }
 }

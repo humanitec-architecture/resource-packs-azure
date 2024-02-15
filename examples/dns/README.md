@@ -1,3 +1,17 @@
+# Example: dns resource based on Azure Cloud DNS
+
+This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using Azure Cloud DNS.
+
+The created Resource Definition can be used in your Score file using:
+
+```yaml
+resources:
+  ...
+  dns:
+    type: dns
+```
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

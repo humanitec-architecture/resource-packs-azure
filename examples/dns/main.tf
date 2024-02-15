@@ -5,8 +5,8 @@ resource "humanitec_application" "example" {
 
 module "dns" {
   source = "../../humanitec-resource-defs/dns/basic"
-  prefix = var.prefix
 
+  prefix                   = var.prefix
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   client_id                = var.client_id
