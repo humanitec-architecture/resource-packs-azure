@@ -4,22 +4,22 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
-| azurerm | 3.91.0 |
+| azurerm | ~> 3.91 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | 3.91.0 |
+| azurerm | ~> 3.91 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azurerm_dns_a_record.record](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/dns_a_record) | resource |
-| [azurerm_dns_aaaa_record.example](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/dns_aaaa_record) | resource |
-| [azurerm_dns_cname_record.example](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/dns_cname_record) | resource |
-| [azurerm_dns_zone.zone](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/data-sources/dns_zone) | data source |
+| [azurerm_dns_a_record.record](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_a_record) | resource |
+| [azurerm_dns_aaaa_record.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_aaaa_record) | resource |
+| [azurerm_dns_cname_record.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_cname_record) | resource |
+| [azurerm_dns_zone.zone](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone) | data source |
 
 ## Inputs
 
@@ -43,5 +43,5 @@
 
 | Name | Description |
 |------|-------------|
-| host | The DNS name. |
+| host | n/a |
 <!-- END_TF_DOCS -->

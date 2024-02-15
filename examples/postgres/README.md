@@ -1,3 +1,17 @@
+# Example: postgres resource based on Azure Database for PostgresSQL
+
+This example configures a [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres) Resource Definition using Azure Database for PostgresSQL.
+
+The created Resource Definition can be used in your Score file using:
+
+```yaml
+resources:
+  ...
+  db:
+    type: postgres
+```
+
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

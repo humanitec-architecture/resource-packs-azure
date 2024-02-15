@@ -4,24 +4,24 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
-| azurerm | 3.91.0 |
+| azurerm | ~> 3.91 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| azurerm | 3.91.0 |
+| azurerm | ~> 3.91 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azurerm_postgresql_database.db](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/postgresql_database) | resource |
-| [azurerm_postgresql_server.main](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/postgresql_server) | resource |
-| [azurerm_private_endpoint.endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/resources/private_endpoint) | resource |
-| [azurerm_resource_group.resouce](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/data-sources/resource_group) | data source |
-| [azurerm_subnet.vn_subnets](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/data-sources/subnet) | data source |
-| [azurerm_virtual_network.vn](https://registry.terraform.io/providers/hashicorp/azurerm/3.91.0/docs/data-sources/virtual_network) | data source |
+| [azurerm_postgresql_database.db](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_database) | resource |
+| [azurerm_postgresql_server.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_server) | resource |
+| [azurerm_private_endpoint.endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
+| [azurerm_resource_group.resouce](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.vn_subnets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
+| [azurerm_virtual_network.vn](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network) | data source |
 
 ## Inputs
 

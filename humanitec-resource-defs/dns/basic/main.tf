@@ -20,14 +20,15 @@ resource "humanitec_resource_definition" "main" {
       }
 
       variables = {
+        res_id    = "$${context.res.id}"
+        app_id    = "$${context.app.id}"
+        env_id    = "$${context.env.id}"
+        subdomain = "$${context.app.id}-$${context.env.id}"
+
         tenant_id           = var.tenant_id
         subscription_id     = var.subscription_id
         dns_zone            = var.dns_zone
         resource_group_name = var.resource_group_name
-        res_id              = "$${context.res.id}"
-        app_id              = "$${context.app.id}"
-        env_id              = "$${context.env.id}"
-        subdomain           = "$${context.app.id}-$${context.env.id}"
       }
     })
   }
