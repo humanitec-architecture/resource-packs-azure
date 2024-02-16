@@ -33,7 +33,7 @@ variable "subscription_id" {
 variable "name" {
   description = "Specifies the Name for created application."
   type        = string
-  default     = ""
+  default     = "hum-rp-redis-example"
 }
 
 variable "resource_group_name" {

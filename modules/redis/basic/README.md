@@ -28,7 +28,7 @@
 | client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | capacity | The size of the Redis cache to deploy. | `number` | `2` | no |

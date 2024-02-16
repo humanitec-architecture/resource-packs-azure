@@ -49,7 +49,7 @@ variable "database_name" {
 }
 
 variable "resource_group_name" {
-  description = "Specifies the Name of the Resource Group within which this database will reside."
+  description = "Specifies the Name of the Resource Group within which created resources will reside."
   type        = string
 }
 

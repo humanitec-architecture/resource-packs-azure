@@ -1,0 +1,3 @@
+policy_resource_class      = ""
+prefix                     = ""
+service_bus_resource_class = ""

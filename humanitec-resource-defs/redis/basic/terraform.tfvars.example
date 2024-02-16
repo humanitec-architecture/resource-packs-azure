@@ -30,7 +30,7 @@ resource_group_name = ""
 resource_packs_azure_rev = "refs/heads/main"
 
 # Azure Resource Pack git url.
-resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-azure.git"
 
 # The SKU of Redis to use.
 sku_name = "Standard"

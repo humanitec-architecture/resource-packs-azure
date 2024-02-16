@@ -37,7 +37,7 @@ variable "dns_zone" {
 }
 
 variable "resource_group_name" {
-  description = "Specifies the Name of the Resource Group within which this dns will reside."
+  description = "Specifies the Name of the Resource Group within which created resource will reside."
   type        = string
 }
 

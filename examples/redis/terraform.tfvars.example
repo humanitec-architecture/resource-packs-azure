@@ -6,7 +6,7 @@ client_id = ""
 client_secret = ""
 
 # Specifies the Name for created application.
-name = ""
+name = "hum-rp-redis-example"
 
 # Specifies the Name of the Resource Group within which this database will reside.
 resource_group_name = ""

@@ -1,7 +1,7 @@
 variable "resource_packs_azure_url" {
   description = "Azure Resource Pack git url."
   type        = string
-  default     = "https://github.com/humanitec-architecture/resource-packs-aws.git"
+  default     = "https://github.com/humanitec-architecture/resource-packs-azure.git"
 }
 
 variable "resource_packs_azure_rev" {

@@ -31,7 +31,7 @@
 | dns\_zone | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| resource\_group\_name | Specifies the Name of the Resource Group within which this dns will reside. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resource will reside. | `string` | n/a | yes |
 | subdomain | The subdomain of the DNS name that the DNS record is for. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |

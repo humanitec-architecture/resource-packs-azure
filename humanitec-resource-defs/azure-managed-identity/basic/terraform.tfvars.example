@@ -1,0 +1,27 @@
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies the prefix used in default name for created resources.
+prefix = "hum-rp-service-bus-ex-"
+
+# Specifies the Name of the Resource Group within which created resources will reside.
+resource_group_name = ""
+
+# Azure Resource Pack git branch.
+resource_packs_azure_rev = "refs/heads/main"
+
+# Azure Resource Pack git url.
+resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-azure.git"
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""
