@@ -34,7 +34,7 @@
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-mysql-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
-| resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-aws.git"` | no |
+| resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |
 | sku\_name | The SKU of Redis to use. | `string` | `"Standard"` | no |
 
 ## Outputs

@@ -40,7 +40,7 @@
 | mysql\_version | Specifies the version of MySQL to use. | `string` | n/a | yes |
 | public\_network\_access\_enabled | Whether or not public network access is allowed for this server. | `bool` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | sku\_name | Specifies the SKU Name for this MySQL Server. | `string` | n/a | yes |
 | ssl\_enforcement\_enabled | Specifies if SSL should be enforced on connections. | `bool` | n/a | yes |
 | ssl\_minimal\_tls\_version\_enforced | The minimum TLS version to support on the sever. | `string` | n/a | yes |

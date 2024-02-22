@@ -28,7 +28,7 @@ prefix = "hum-rp-mysql-ex-"
 
 res_id = ""
 
-# Specifies the Name of the Resource Group within which this database will reside.
+# Specifies the Name of the Resource Group within which created resources will reside.
 resource_group_name = ""
 
 # The SKU of Redis to use.

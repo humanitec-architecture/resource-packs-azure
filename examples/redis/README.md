@@ -48,7 +48,7 @@ resources:
 | resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
-| name | Specifies the Name for created application. | `string` | `""` | no |
+| name | Specifies the Name for created application. | `string` | `"hum-rp-redis-example"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |
 <!-- END_TF_DOCS -->

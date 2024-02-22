@@ -1,0 +1,38 @@
+app_id = ""
+
+# Specifies the audience for this Federated Identity Credential.
+audience = ""
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+env_id = ""
+
+# Specifies the issuer of this Federated Identity Credential.
+issuer = ""
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies parent ID of User Assigned Identity for this Federated Identity Credential.
+parent_id = ""
+
+# Specifies the prefix used in default name for created resources.
+prefix = "hum-rp-mysql-ex-"
+
+res_id = ""
+
+# Specifies the Name of the Resource Group within which created resources will reside.
+resource_group_name = ""
+
+# Specifies the subject for this Federated Identity Credential.
+subject = ""
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""

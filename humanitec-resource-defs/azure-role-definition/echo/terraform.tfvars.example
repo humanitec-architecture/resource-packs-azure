@@ -1,0 +1,9 @@
+
+# Specifies the prefix used in default name for created resources.
+prefix = "hum-rp-service-bus-ex-"
+
+# The Azure Resource Manager ID
+role_definition_id = ""
+
+# The scope at which the Role Definition applies to
+role_definition_scope = ""

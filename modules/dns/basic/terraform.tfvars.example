@@ -22,7 +22,7 @@ name = ""
 
 res_id = ""
 
-# Specifies the Name of the Resource Group within which this dns will reside.
+# Specifies the Name of the Resource Group within which created resource will reside.
 resource_group_name = ""
 
 # The subdomain of the DNS name that the DNS record is for.
