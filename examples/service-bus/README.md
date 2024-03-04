@@ -15,6 +15,8 @@ resources:
     class: basic-publisher
 ```
 
+The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
+
 The workload service account will automatically be assigned the necessary roles.
 
 <!-- BEGIN_TF_DOCS -->
@@ -42,8 +44,8 @@ The workload service account will automatically be assigned the necessary roles.
 | role\_definition\_consumer | ../../humanitec-resource-defs/azure-role-definition/echo | n/a |
 | role\_definition\_publisher | ../../humanitec-resource-defs/azure-role-definition/echo | n/a |
 | service\_bus | ../../humanitec-resource-defs/azure-service-bus-queue/basic | n/a |
-| service\_bus\_consumer | ../../humanitec-resource-defs/azure-service-bus-queue/passthrough | n/a |
-| service\_bus\_publisher | ../../humanitec-resource-defs/azure-service-bus-queue/passthrough | n/a |
+| service\_bus\_consumer | ../../humanitec-resource-defs/azure-service-bus-queue/delegator | n/a |
+| service\_bus\_publisher | ../../humanitec-resource-defs/azure-service-bus-queue/delegator | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
 ## Resources
