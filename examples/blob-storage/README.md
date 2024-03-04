@@ -15,9 +15,9 @@ resources:
     class: basic-admin
 ```
 
+The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
+
 The workload service account will automatically be assigned the necessary Azure Role.
-
-
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -38,8 +38,8 @@ The workload service account will automatically be assigned the necessary Azure 
 | Name | Source | Version |
 |------|--------|---------|
 | blob\_storage | ../../humanitec-resource-defs/azure-blob/basic | n/a |
-| blob\_storage\_admin | ../../humanitec-resource-defs/azure-blob/passthrough | n/a |
-| blob\_storage\_reader | ../../humanitec-resource-defs/azure-blob/passthrough | n/a |
+| blob\_storage\_admin | ../../humanitec-resource-defs/azure-blob/delegator | n/a |
+| blob\_storage\_reader | ../../humanitec-resource-defs/azure-blob/delegator | n/a |
 | federated\_identity | ../../humanitec-resource-defs/azure-federated-identity/basic | n/a |
 | k8s\_service\_account | ../../humanitec-resource-defs/k8s/service-account | n/a |
 | managed\_identity | ../../humanitec-resource-defs/azure-managed-identity/basic | n/a |

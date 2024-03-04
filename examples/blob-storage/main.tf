@@ -45,8 +45,9 @@ resource "humanitec_resource_definition_criteria" "blob_storage" {
 
 // Admin shared
 
+// Exposed delegator resource definition
 module "blob_storage_admin" {
-  source = "../../humanitec-resource-defs/azure-blob/passthrough"
+  source = "../../humanitec-resource-defs/azure-blob/delegator"
 
   prefix                      = "${var.prefix}admin-"
   policy_resource_class       = local.blob_storage_admin_policy_class
@@ -76,8 +77,9 @@ resource "humanitec_resource_definition_criteria" "role_definition_admin" {
 
 // Reader shared
 
+// Exposed delegator resource definition
 module "blob_storage_reader" {
-  source = "../../humanitec-resource-defs/azure-blob/passthrough"
+  source = "../../humanitec-resource-defs/azure-blob/delegator"
 
   prefix                      = "${var.prefix}reader-"
   policy_resource_class       = local.blob_storage_reader_policy_class

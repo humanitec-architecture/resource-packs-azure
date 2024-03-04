@@ -42,8 +42,9 @@ resource "humanitec_resource_definition_criteria" "service_bus" {
 
 // Publisher shared
 
+// Exposed delegator resource definition
 module "service_bus_publisher" {
-  source = "../../humanitec-resource-defs/azure-service-bus-queue/passthrough"
+  source = "../../humanitec-resource-defs/azure-service-bus-queue/delegator"
 
   prefix                     = "${var.prefix}publisher-"
   policy_resource_class      = local.service_bus_publisher_policy_class
@@ -73,8 +74,9 @@ resource "humanitec_resource_definition_criteria" "role_definition_publisher" {
 
 // Consumer shared
 
+// Exposed delegator resource definition
 module "service_bus_consumer" {
-  source = "../../humanitec-resource-defs/azure-service-bus-queue/passthrough"
+  source = "../../humanitec-resource-defs/azure-service-bus-queue/delegator"
 
   prefix                     = "${var.prefix}consumer-"
   policy_resource_class      = local.service_bus_consumer_policy_class
