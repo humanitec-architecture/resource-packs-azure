@@ -1,0 +1,60 @@
+
+# The Administrator login for the PostgreSQL Server.
+administrator_login = ""
+
+# The Password associated with the administrator_login for the PostgreSQL Server.
+administrator_password = ""
+
+app_id = ""
+
+# Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only.
+auto_grow_enabled = ""
+
+# Backup retention days for the server, supported values are between 7 and 35 days.
+backup_retention_days = ""
+
+# The Client ID which should be used.
+client_id = ""
+
+# The Client Secret which should be used.
+client_secret = ""
+
+env_id = ""
+
+# Turn Geo-redundant server backups on/off.
+geo_redundant_backup_enabled = ""
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies the version of PostgreSQL to use.
+postgres_version = ""
+
+# Specifies the prefix used in default name for created resources.
+prefix = ""
+
+res_id = ""
+
+# Specifies the Name of the Resource Group within which created resources will reside.
+resource_group_name = ""
+
+# Specifies the SKU Name for this PostgreSQL Server.
+sku_name = ""
+
+# Max storage allowed for a server.
+storage_mb = ""
+
+# The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint.
+subnet_name = ""
+
+# The Subscription ID which should be used.
+subscription_id = ""
+
+# The Tenant ID which should be used.
+tenant_id = ""
+
+# The name of the virtual network where Private Endpoint will be allocated.
+virtual_network_name = ""
+
+# Specifies the Name of the Resource Group within which created resources will reside.
+workload_resource_group_name = ""
