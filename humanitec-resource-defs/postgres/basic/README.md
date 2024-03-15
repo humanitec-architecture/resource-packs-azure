@@ -22,11 +22,10 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
+| driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
 | instance\_resource | Identifier of the PostgreSQL instance resource. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
+| append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `""` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |

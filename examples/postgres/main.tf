@@ -24,6 +24,19 @@ resource "azurerm_role_assignment" "resource_group_workload" {
   principal_id         = azuread_service_principal.humanitec_provisioner.object_id
 }
 
+resource "humanitec_resource_account" "humanitec_provisioner" {
+  id   = var.name
+  name = var.name
+  type = "azure"
+
+  credentials = jsonencode({
+    "appId" : azuread_service_principal.humanitec_provisioner.client_id,
+    "displayName" : azuread_application.humanitec_provisioner.display_name,
+    "password" : azuread_service_principal_password.humanitec_provisioner.value,
+    "tenant" : azuread_service_principal.humanitec_provisioner.application_tenant_id
+  })
+}
+
 # Example application and resource definition criteria
 
 # Define the shared postgres-instance resource id and class
@@ -51,9 +64,8 @@ module "postgres_instance" {
   prefix                       = var.prefix
   resource_packs_azure_url     = var.resource_packs_azure_url
   resource_packs_azure_rev     = var.resource_packs_azure_rev
-  client_id                    = azuread_service_principal.humanitec_provisioner.client_id
-  client_secret                = azuread_service_principal_password.humanitec_provisioner.value
-  tenant_id                    = azuread_service_principal.humanitec_provisioner.application_tenant_id
+  append_logs_to_error         = true
+  driver_account               = humanitec_resource_account.humanitec_provisioner.id
   subscription_id              = var.subscription_id
   resource_group_name          = data.azurerm_resource_group.resource.name
   administrator_login          = var.administrator_login
@@ -84,9 +96,8 @@ module "postgres" {
   prefix                   = var.prefix
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
-  client_id                = azuread_service_principal.humanitec_provisioner.client_id
-  client_secret            = azuread_service_principal_password.humanitec_provisioner.value
-  tenant_id                = azuread_service_principal.humanitec_provisioner.application_tenant_id
+  append_logs_to_error     = true
+  driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
   instance_resource        = "postgres-instance.${local.postgres_instance_class}#${local.postgres_instance_res_id}"
 

@@ -5,12 +5,6 @@ administrator_login = ""
 # The Password associated with the administrator_login for the PostgreSQL Flexible Server.
 administrator_password = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # Specifies the name for the created database
 database_name = ""
 
@@ -24,6 +18,3 @@ server_id = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

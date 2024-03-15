@@ -13,12 +13,6 @@ auto_grow_enabled = ""
 # Backup retention days for the server, supported values are between 7 and 35 days.
 backup_retention_days = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 env_id = ""
 
 # Turn Geo-redundant server backups on/off.
@@ -49,9 +43,6 @@ subnet_name = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""
 
 # The name of the virtual network where Private Endpoint will be allocated.
 virtual_network_name = ""

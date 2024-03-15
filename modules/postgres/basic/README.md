@@ -24,13 +24,10 @@
 |------|-------------|------|---------|:--------:|
 | administrator\_login | The Administrator login for the PostgreSQL Flexible Server. | `string` | n/a | yes |
 | administrator\_password | The Password associated with the administrator\_login for the PostgreSQL Flexible Server. | `string` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | host | The private IP address of the PostgreSQL Flexible Server Database | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | server\_id | The ID of the Azure PostgreSQL Flexible Server from which to create this PostgreSQL Flexible Server Database | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | database\_name | Specifies the name for the created database | `string` | `""` | no |
 
 ## Outputs

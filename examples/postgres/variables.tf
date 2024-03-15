@@ -45,16 +45,16 @@ variable "administrator_password" {
 }
 
 variable "virtual_network_name" {
-  description = "The name of the virtual network where the workloads are running."
+  description = "The name of the virtual network where Private Endpoint will be allocated."
   type        = string
 }
 
 variable "subnet_name" {
-  description = "The name of the subnet where the workloads are running."
+  description = "The name of the subnet where the Private Endpoint will be allocated."
   type        = string
 }
 
 variable "workload_resource_group_name" {
-  description = "The name of the resource group where the workloads are running."
+  description = "The name of the resource group where the Private Endpoint will be allocated."
   type        = string
 }

@@ -5,17 +5,17 @@ administrator_login = ""
 # The Password associated with the administrator_login for the PostgreSQL Server.
 administrator_password = ""
 
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
 # Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only.
 auto_grow_enabled = true
 
 # Backup retention days for the server, supported values are between 7 and 35 days.
 backup_retention_days = 7
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 # Turn Geo-redundant server backups on/off.
 geo_redundant_backup_enabled = true
@@ -44,17 +44,14 @@ sku_name = "B_Standard_B2s"
 # Max storage allowed for a server.
 storage_mb = 65536
 
-# The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint.
+# The name of the subnet where the Private Endpoint will be allocated.
 subnet_name = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
 
-# The Tenant ID which should be used.
-tenant_id = ""
-
 # The name of the virtual network where Private Endpoint will be allocated.
 virtual_network_name = ""
 
-# The ID of the Application which should be used.
+# The name of the resource group where the Private Endpoint will be allocated.
 workload_resource_group_name = ""

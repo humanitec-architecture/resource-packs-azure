@@ -91,6 +91,7 @@ graph LR;
 | [azurerm_role_assignment.resource_group_resource](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [azurerm_role_assignment.resource_group_workload](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [humanitec_application.example](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
+| [humanitec_resource_account.humanitec_provisioner](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition_criteria.postgres](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.postgres_instance](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [azurerm_resource_group.resource](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
@@ -101,10 +102,10 @@ graph LR;
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
-| subnet\_name | The name of the subnet where the workloads are running. | `string` | n/a | yes |
+| subnet\_name | The name of the subnet where the Private Endpoint will be allocated. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| virtual\_network\_name | The name of the virtual network where the workloads are running. | `string` | n/a | yes |
-| workload\_resource\_group\_name | The name of the resource group where the workloads are running. | `string` | n/a | yes |
+| virtual\_network\_name | The name of the virtual network where Private Endpoint will be allocated. | `string` | n/a | yes |
+| workload\_resource\_group\_name | The name of the resource group where the Private Endpoint will be allocated. | `string` | n/a | yes |
 | administrator\_login | The Administrator login for the PostgreSQL Server. | `string` | `""` | no |
 | administrator\_password | The Password associated with the administrator\_login for the PostgreSQL Server. | `string` | `""` | no |
 | name | Name of the example application. | `string` | `"hum-rp-postgres-example"` | no |
