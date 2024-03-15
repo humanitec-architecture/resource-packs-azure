@@ -41,7 +41,6 @@ resource "humanitec_resource_definition" "main" {
         auto_grow_enabled            = var.auto_grow_enabled
         virtual_network_name         = var.virtual_network_name
         subnet_name                  = var.subnet_name
-        # private_dns_zone_id          = var.private_dns_zone_id
         workload_resource_group_name = var.workload_resource_group_name
       }
     })

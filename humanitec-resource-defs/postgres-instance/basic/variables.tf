@@ -103,11 +103,6 @@ variable "subnet_name" {
   type        = string
 }
 
-# variable "private_dns_zone_id" {
-#   description = "The ID of the Private DNS Zone which should be used."
-#   type        = string
-# }
-
 variable "workload_resource_group_name" {
   description = "The ID of the Application which should be used."
   type        = string
