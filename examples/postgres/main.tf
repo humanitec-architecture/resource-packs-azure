@@ -42,6 +42,12 @@ resource "humanitec_resource_account" "humanitec_provisioner" {
     "password" : azuread_service_principal_password.humanitec_provisioner.value,
     "tenant" : azuread_service_principal.humanitec_provisioner.application_tenant_id
   })
+
+  depends_on = [
+    # Otherwise the account looses permissions before the resources are deleted
+    azurerm_role_assignment.resource_group_resource,
+    azurerm_role_assignment.resource_group_workload
+  ]
 }
 
 # Example application and resource definition criteria
@@ -72,12 +78,6 @@ module "postgres_instance" {
   virtual_network_name         = var.virtual_network_name
   subnet_name                  = var.subnet_name
   workload_resource_group_name = data.azurerm_resource_group.workload.name
-
-  depends_on = [
-    # Otherwise the account looses permissions before the resources are deleted
-    azurerm_role_assignment.resource_group_resource,
-    azurerm_role_assignment.resource_group_workload
-  ]
 }
 
 resource "humanitec_resource_definition_criteria" "postgres_instance" {
@@ -99,12 +99,6 @@ module "postgres" {
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
   instance_resource        = "postgres-instance.${local.postgres_instance_class}#${local.postgres_instance_res_id}"
-
-  depends_on = [
-    # Otherwise the account looses permissions before the resources are deleted
-    azurerm_role_assignment.resource_group_resource,
-    azurerm_role_assignment.resource_group_workload
-  ]
 }
 
 resource "humanitec_resource_definition_criteria" "postgres" {
