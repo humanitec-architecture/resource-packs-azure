@@ -5,10 +5,28 @@ administrator_login = ""
 # The Password associated with the administrator_login for the PostgreSQL Server.
 administrator_password = ""
 
-# Name of the example application.
-name = "hum-rp-postgres-example"
+# Append Terraform logs to error messages.
+append_logs_to_error = false
 
-# Prefix of the created resources
+# Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only.
+auto_grow_enabled = true
+
+# Backup retention days for the server, supported values are between 7 and 35 days.
+backup_retention_days = 7
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
+
+# Turn Geo-redundant server backups on/off.
+geo_redundant_backup_enabled = true
+
+# Specifies the Name for created resources. (Leave empty for the default one)
+name = ""
+
+# Specifies the version of PostgreSQL to use.
+postgres_version = "11"
+
+# Specifies the prefix used in default name for created resources.
 prefix = "hum-rp-postgres-ex-"
 
 # Specifies the Name of the Resource Group within which this database will reside.
@@ -19,6 +37,12 @@ resource_packs_azure_rev = "refs/heads/main"
 
 # Azure Resource Pack git url.
 resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-packs-azure.git"
+
+# Specifies the SKU Name for this PostgreSQL Server.
+sku_name = "B_Standard_B2s"
+
+# Max storage allowed for a server.
+storage_mb = 65536
 
 # The name of the subnet where the Private Endpoint will be allocated.
 subnet_name = ""

@@ -1,0 +1,63 @@
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 1.3.0 |
+| azurerm | ~> 3.91 |
+| random | ~> 3.6 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | ~> 3.91 |
+| random | ~> 3.6 |
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_postgresql_flexible_server.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_flexible_server) | resource |
+| [azurerm_private_endpoint.endpoint](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint) | resource |
+| [random_password.password](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) | resource |
+| [azurerm_resource_group.postgres](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
+| [azurerm_resource_group.workload](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
+| [azurerm_subnet.vn_subnets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
+| [azurerm_virtual_network.vn](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network) | data source |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| administrator\_login | The Administrator login for the PostgreSQL Server. | `string` | n/a | yes |
+| administrator\_password | The Password associated with the administrator\_login for the PostgreSQL Server. | `string` | n/a | yes |
+| app\_id | n/a | `string` | n/a | yes |
+| auto\_grow\_enabled | Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only. | `bool` | n/a | yes |
+| backup\_retention\_days | Backup retention days for the server, supported values are between 7 and 35 days. | `number` | n/a | yes |
+| env\_id | n/a | `string` | n/a | yes |
+| geo\_redundant\_backup\_enabled | Turn Geo-redundant server backups on/off. | `bool` | n/a | yes |
+| postgres\_version | Specifies the version of PostgreSQL to use. | `string` | n/a | yes |
+| res\_id | n/a | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
+| sku\_name | Specifies the SKU Name for this PostgreSQL Server. | `string` | n/a | yes |
+| storage\_mb | Max storage allowed for a server. | `number` | n/a | yes |
+| subnet\_name | The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. | `string` | n/a | yes |
+| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
+| virtual\_network\_name | The name of the virtual network where Private Endpoint will be allocated. | `string` | n/a | yes |
+| workload\_resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
+| name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
+| prefix | Specifies the prefix used in default name for created resources. | `string` | `""` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| host | n/a |
+| name | n/a |
+| password | n/a |
+| port | n/a |
+| server\_id | n/a |
+| ssl\_mode | n/a |
+| username | n/a |
+<!-- END_TF_DOCS -->

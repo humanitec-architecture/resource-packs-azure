@@ -22,21 +22,6 @@ variable "resource_packs_azure_rev" {
   default     = "refs/heads/main"
 }
 
-variable "client_id" {
-  description = "The Client ID which should be used."
-  type        = string
-}
-
-variable "client_secret" {
-  description = "The Client Secret which should be used."
-  type        = string
-}
-
-variable "tenant_id" {
-  description = "The Tenant ID which should be used."
-  type        = string
-}
-
 variable "subscription_id" {
   description = "The Subscription ID which should be used."
   type        = string
@@ -50,11 +35,13 @@ variable "resource_group_name" {
 variable "administrator_login" {
   description = "The Administrator login for the PostgreSQL Server."
   type        = string
+  default     = ""
 }
 
-variable "administrator_login_password" {
+variable "administrator_password" {
   description = "The Password associated with the administrator_login for the PostgreSQL Server."
   type        = string
+  default     = ""
 }
 
 variable "virtual_network_name" {
@@ -62,12 +49,12 @@ variable "virtual_network_name" {
   type        = string
 }
 
-variable "virtual_network_resource_group_name" {
-  description = "Specifies the Name of the Resource Group within which the Private Endpoint should exist."
+variable "subnet_name" {
+  description = "The name of the subnet where the Private Endpoint will be allocated."
   type        = string
 }
 
-variable "subnet_name" {
-  description = "The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint."
+variable "workload_resource_group_name" {
+  description = "The name of the resource group where the Private Endpoint will be allocated."
   type        = string
 }
