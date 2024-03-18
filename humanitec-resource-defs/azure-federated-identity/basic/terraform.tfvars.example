@@ -34,3 +34,6 @@ subject = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
+
+# Use terraform remote state.
+terraform_state = ""

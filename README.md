@@ -11,6 +11,7 @@ A collection of Azure resources ready to be used with [Humanitec](https://humani
 The following resources are included:
 
 * [azure-blob/basic](./humanitec-resource-defs/azure-blob/basic): Basic Azure Storage Blob Container.
+  * This example also show-cases how to configure a [Terraform Backend](https://developer.humanitec.com/integration-and-extensions/drivers/generic-drivers/terraform/).
 * [azure-blob/delegator](./humanitec-resource-defs/azure-blob/delegator): Echo Azure Storage Blob Container output and co-provision role definition.
 * [azure-federated-identity/basic](./humanitec-resource-defs/azure-federated-identity/basic): Basic Azure Federated Identity for bounding K8s Service Account with Azure Managed Entity.
 * [azure-managed-identity/basic](./humanitec-resource-defs/azure-managed-identity/basic): Basic Azure managed identity.

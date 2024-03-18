@@ -12,6 +12,10 @@ terraform {
       source  = "humanitec/humanitec"
       version = "~> 1.0"
     }
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.6"
+    }
   }
 
   required_version = ">= 1.3.0"

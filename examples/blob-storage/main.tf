@@ -64,6 +64,7 @@ module "blob_storage" {
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   append_logs_to_error     = true
+  terraform_state          = local.terraform_state
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
   resource_group_name      = var.resource_group_name
@@ -78,6 +79,8 @@ resource "humanitec_resource_definition_criteria" "blob_storage" {
   resource_definition_id = module.blob_storage.id
   app_id                 = humanitec_application.example.id
   class                  = local.blob_storage_basic_class
+
+  force_delete = true
 }
 
 // Admin shared
@@ -95,6 +98,8 @@ resource "humanitec_resource_definition_criteria" "blob_storage_admin" {
   resource_definition_id = module.blob_storage_admin.id
   app_id                 = humanitec_application.example.id
   class                  = local.blob_storage_admin_class
+
+  force_delete = true
 }
 
 module "role_definition_admin" {
@@ -110,6 +115,8 @@ resource "humanitec_resource_definition_criteria" "role_definition_admin" {
   resource_definition_id = module.role_definition_admin.id
   app_id                 = humanitec_application.example.id
   class                  = local.blob_storage_admin_policy_class
+
+  force_delete = true
 }
 
 // Reader shared
@@ -127,6 +134,8 @@ resource "humanitec_resource_definition_criteria" "blob_storage_reader" {
   resource_definition_id = module.blob_storage_reader.id
   app_id                 = humanitec_application.example.id
   class                  = local.blob_storage_reader_class
+
+  force_delete = true
 }
 
 module "role_definition_reader" {
@@ -142,6 +151,8 @@ resource "humanitec_resource_definition_criteria" "role_definition_reader" {
   resource_definition_id = module.role_definition_reader.id
   app_id                 = humanitec_application.example.id
   class                  = local.blob_storage_reader_policy_class
+
+  force_delete = true
 }
 
 // Workload based
@@ -155,6 +166,8 @@ module "workload" {
 resource "humanitec_resource_definition_criteria" "workload" {
   resource_definition_id = module.workload.id
   app_id                 = humanitec_application.example.id
+
+  force_delete = true
 }
 
 module "k8s_service_account" {
@@ -166,6 +179,8 @@ module "k8s_service_account" {
 resource "humanitec_resource_definition_criteria" "k8s_service_account" {
   resource_definition_id = module.k8s_service_account.id
   app_id                 = humanitec_application.example.id
+
+  force_delete = true
 }
 
 module "federated_identity" {
@@ -174,6 +189,7 @@ module "federated_identity" {
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   append_logs_to_error     = true
+  terraform_state          = local.terraform_state
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
 
@@ -189,6 +205,8 @@ module "federated_identity" {
 resource "humanitec_resource_definition_criteria" "federated_identity" {
   resource_definition_id = module.federated_identity.id
   app_id                 = humanitec_application.example.id
+
+  force_delete = true
 }
 
 module "managed_identity" {
@@ -197,6 +215,7 @@ module "managed_identity" {
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   append_logs_to_error     = true
+  terraform_state          = local.terraform_state
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
 
@@ -207,6 +226,8 @@ module "managed_identity" {
 resource "humanitec_resource_definition_criteria" "managed_identity" {
   resource_definition_id = module.managed_identity.id
   app_id                 = humanitec_application.example.id
+
+  force_delete = true
 }
 
 module "role_assignment" {
@@ -215,6 +236,7 @@ module "role_assignment" {
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   append_logs_to_error     = true
+  terraform_state          = local.terraform_state
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
 
@@ -227,4 +249,6 @@ module "role_assignment" {
 resource "humanitec_resource_definition_criteria" "role_assignment" {
   resource_definition_id = module.role_assignment.id
   app_id                 = humanitec_application.example.id
+
+  force_delete = true
 }

@@ -65,3 +65,15 @@ variable "container_access_type" {
   type        = string
   default     = "private"
 }
+
+variable "terraform_state" {
+  description = "Use terraform remote state."
+  type = object({
+    subscription_id      = string
+    resource_group_name  = string
+    storage_account_name = string
+    container_name       = string
+    key_prefix           = optional(string)
+  })
+  default = null
+}
