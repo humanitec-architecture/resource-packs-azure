@@ -26,15 +26,12 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | app\_id | n/a | `string` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | dns\_zone | The id of the hosted zone in which this record set will reside. | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resource will reside. | `string` | n/a | yes |
 | subdomain | The subdomain of the DNS name that the DNS record is for. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | ip\_address | The IPv4 address that the DNS name should resolve to. | `string` | `""` | no |
 | ipv6\_address | The IPv6 address that the DNS name should resolve to. | `string` | `""` | no |
 | name | A valid fully qualified domain name that the DNS name should resolve to. | `string` | `""` | no |

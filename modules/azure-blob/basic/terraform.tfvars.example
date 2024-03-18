@@ -7,12 +7,6 @@ account_tier = "Standard"
 
 app_id = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # The Access Level configured for this Container.
 container_access_type = "private"
 
@@ -34,6 +28,3 @@ resource_group_name = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

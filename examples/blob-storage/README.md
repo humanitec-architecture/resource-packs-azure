@@ -25,12 +25,16 @@ The workload service account will automatically be assigned the necessary Azure 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
+| azuread | ~> 2.47 |
+| azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
+| azuread | ~> 2.47 |
+| azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
 ## Modules
@@ -52,7 +56,12 @@ The workload service account will automatically be assigned the necessary Azure 
 
 | Name | Type |
 |------|------|
+| [azuread_application.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/application) | resource |
+| [azuread_service_principal.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal) | resource |
+| [azuread_service_principal_password.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal_password) | resource |
+| [azurerm_role_assignment.resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
 | [humanitec_application.example](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
+| [humanitec_resource_account.humanitec_provisioner](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition_criteria.blob_storage](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.blob_storage_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.blob_storage_reader](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
@@ -63,17 +72,15 @@ The workload service account will automatically be assigned the necessary Azure 
 | [humanitec_resource_definition_criteria.role_definition_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.role_definition_reader](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | aks\_cluster\_issuer\_url | AKS OIDC Issuer URL | `string` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | account\_replication\_type | Defines the type of replication to use for this storage account. | `string` | `"GRS"` | no |
 | account\_tier | Defines the Tier to use for this storage account. | `string` | `"Standard"` | no |
 | container\_access\_type | The Access Level configured for this Container. | `string` | `"private"` | no |

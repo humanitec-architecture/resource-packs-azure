@@ -1,4 +1,11 @@
 # Service principal used by Humanitec to provision resources
+data "azurerm_resource_group" "resource" {
+  name = var.resource_group_name
+}
+
+data "azurerm_resource_group" "workload" {
+  name = var.workload_resource_group_name
+}
 
 resource "azuread_application" "humanitec_provisioner" {
   display_name = var.name
@@ -48,14 +55,6 @@ locals {
 resource "humanitec_application" "example" {
   id   = var.name
   name = var.name
-}
-
-data "azurerm_resource_group" "resource" {
-  name = var.resource_group_name
-}
-
-data "azurerm_resource_group" "workload" {
-  name = var.workload_resource_group_name
 }
 
 module "postgres_instance" {

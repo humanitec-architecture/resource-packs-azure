@@ -3,12 +3,6 @@ app_id = ""
 # The size of the Redis cache to deploy.
 capacity = 2
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # Enable the non-SSL port
 enable_non_ssl_port = false
 
@@ -36,6 +30,3 @@ sku_name = "Standard"
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

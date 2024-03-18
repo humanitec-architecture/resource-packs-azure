@@ -4,12 +4,6 @@ actions = ""
 
 app_id = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # One or more Allowed Data Actions.
 data_actions = ""
 
@@ -28,6 +22,3 @@ scope = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

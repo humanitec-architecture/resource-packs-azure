@@ -1,11 +1,4 @@
 app_id = ""
-
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 env_id = ""
 
 # Specifies the Name for created resources. (Leave empty for the default one)
@@ -21,6 +14,3 @@ resource_group_name = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""
