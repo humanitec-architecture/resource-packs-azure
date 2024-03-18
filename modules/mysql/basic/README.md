@@ -32,8 +32,6 @@
 | app\_id | n/a | `string` | n/a | yes |
 | auto\_grow\_enabled | Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only. | `bool` | n/a | yes |
 | backup\_retention\_days | Backup retention days for the server, supported values are between 7 and 35 days. | `number` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | database\_name | Specifies the name for the created database | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | geo\_redundant\_backup\_enabled | Turn Geo-redundant server backups on/off. | `bool` | n/a | yes |
@@ -47,7 +45,6 @@
 | storage\_mb | Max storage allowed for a server. | `number` | n/a | yes |
 | subnet\_name | The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | virtual\_network\_name | The name of the virtual network where Private Endpoint will be allocated. | `string` | n/a | yes |
 | virtual\_network\_resource\_group\_name | Specifies the Name of the Resource Group within which the Private Endpoint should exist. | `string` | n/a | yes |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |

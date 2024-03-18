@@ -2,14 +2,14 @@
 # One or more Allowed Actions.
 actions = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
+# Append Terraform logs to error messages.
+append_logs_to_error = false
 
 # One or more Allowed Data Actions.
 data_actions = ""
+
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 # Specifies the Name for created resources. (Leave empty for the default one)
 name = ""
@@ -28,6 +28,3 @@ scope = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

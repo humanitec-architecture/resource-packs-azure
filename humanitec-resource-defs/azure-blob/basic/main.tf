@@ -4,14 +4,8 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}azure-blob-storage-basic"
   type        = "azure-blob"
 
+  driver_account = var.driver_account
   driver_inputs = {
-    secrets_string = jsonencode({
-      variables = {
-        client_id     = var.client_id
-        client_secret = var.client_secret
-      }
-    })
-
     values_string = jsonencode({
       source = {
         path = "modules/azure-blob/basic"
@@ -19,12 +13,21 @@ resource "humanitec_resource_definition" "main" {
         url  = var.resource_packs_azure_url
       }
 
+      append_logs_to_error = var.append_logs_to_error
+
+      credentials_config = {
+        environment = {
+          ARM_CLIENT_ID     = "appId"
+          ARM_CLIENT_SECRET = "password"
+          ARM_TENANT_ID     = "tenant"
+        }
+      }
+
       variables = {
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"
         env_id = "$${context.env.id}"
 
-        tenant_id                = var.tenant_id
         subscription_id          = var.subscription_id
         resource_group_name      = var.resource_group_name
         name                     = var.name

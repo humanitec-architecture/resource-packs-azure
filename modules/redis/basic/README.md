@@ -24,13 +24,10 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | app\_id | n/a | `string` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | capacity | The size of the Redis cache to deploy. | `number` | `2` | no |
 | enable\_non\_ssl\_port | Enable the non-SSL port | `bool` | `false` | no |
 | family | The SKU family/pricing group to use. | `string` | `"C"` | no |

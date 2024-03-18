@@ -8,12 +8,6 @@ account_tier = "Standard"
 # AKS OIDC Issuer URL
 aks_cluster_issuer_url = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # The Access Level configured for this Container.
 container_access_type = "private"
 
@@ -37,6 +31,3 @@ resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-p
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

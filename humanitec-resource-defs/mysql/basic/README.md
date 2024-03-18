@@ -24,14 +24,13 @@
 |------|-------------|------|---------|:--------:|
 | administrator\_login | The Administrator login for the MySQL Server. | `string` | n/a | yes |
 | administrator\_login\_password | The Password associated with the administrator\_login for the MySQL Server. | `string` | n/a | yes |
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
+| driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
 | subnet\_name | The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 | virtual\_network\_name | The name of the virtual network where Private Endpoint will be allocated. | `string` | n/a | yes |
 | virtual\_network\_resource\_group\_name | Specifies the Name of the Resource Group within which the Private Endpoint should exist. | `string` | n/a | yes |
+| append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
 | auto\_grow\_enabled | Enable/Disable auto-growing of the storage. Storage auto-grow prevents your server from running out of storage and becoming read-only. | `bool` | `true` | no |
 | backup\_retention\_days | Backup retention days for the server, supported values are between 7 and 35 days. | `number` | `7` | no |
 | geo\_redundant\_backup\_enabled | Turn Geo-redundant server backups on/off. | `bool` | `true` | no |

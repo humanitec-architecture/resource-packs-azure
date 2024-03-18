@@ -22,13 +22,10 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| client\_id | The Client ID which should be used. | `string` | n/a | yes |
-| client\_secret | The Client Secret which should be used. | `string` | n/a | yes |
 | principal\_id | The ID of the Principal (User, Group or Service Principal) to assign the Role Definition to. | `string` | n/a | yes |
 | role\_definition\_ids | n/a | `any` | n/a | yes |
 | scopes | n/a | `any` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| tenant\_id | The Tenant ID which should be used. | `string` | n/a | yes |
 
 ## Outputs
 

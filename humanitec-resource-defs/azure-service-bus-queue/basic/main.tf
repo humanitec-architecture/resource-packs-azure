@@ -4,19 +4,23 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}service-bus-basic"
   type        = "azure-service-bus-queue"
 
+  driver_account = var.driver_account
   driver_inputs = {
-    secrets_string = jsonencode({
-      variables = {
-        client_id     = var.client_id
-        client_secret = var.client_secret
-      }
-    })
-
     values_string = jsonencode({
       source = {
         path = "modules/azure-service-bus-queue/basic"
         rev  = var.resource_packs_azure_rev
         url  = var.resource_packs_azure_url
+      }
+
+      append_logs_to_error = var.append_logs_to_error
+
+      credentials_config = {
+        environment = {
+          ARM_CLIENT_ID     = "appId"
+          ARM_CLIENT_SECRET = "password"
+          ARM_TENANT_ID     = "tenant"
+        }
       }
 
       variables = {
@@ -25,7 +29,6 @@ resource "humanitec_resource_definition" "main" {
         env_id = "$${context.env.id}"
 
         name                = var.name
-        tenant_id           = var.tenant_id
         subscription_id     = var.subscription_id
         prefix              = var.prefix
         resource_group_name = var.resource_group_name

@@ -2,12 +2,6 @@
 # AKS OIDC Issuer URL
 aks_cluster_issuer_url = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # Specifies the Name for created example application.
 name = "hum-rp-service-bus-example"
 
@@ -28,6 +22,3 @@ sku = "Standard"
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

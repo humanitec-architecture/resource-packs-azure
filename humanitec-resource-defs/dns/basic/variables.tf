@@ -15,18 +15,14 @@ variable "resource_packs_azure_rev" {
   default     = "refs/heads/main"
 }
 
-variable "client_id" {
-  description = "The Client ID which should be used."
-  type        = string
+variable "append_logs_to_error" {
+  description = "Append Terraform logs to error messages."
+  type        = bool
+  default     = false
 }
 
-variable "client_secret" {
-  description = "The Client Secret which should be used."
-  type        = string
-}
-
-variable "tenant_id" {
-  description = "The Tenant ID which should be used."
+variable "driver_account" {
+  description = "The ID of the Resource Account which should be used."
   type        = string
 }
 

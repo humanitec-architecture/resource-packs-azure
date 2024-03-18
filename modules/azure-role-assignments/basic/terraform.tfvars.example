@@ -1,10 +1,4 @@
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
-
 # The ID of the Principal (User, Group or Service Principal) to assign the Role Definition to.
 principal_id = ""
 
@@ -13,6 +7,3 @@ scopes              = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

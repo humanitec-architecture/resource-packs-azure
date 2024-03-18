@@ -1,12 +1,12 @@
 
+# Append Terraform logs to error messages.
+append_logs_to_error = false
+
 # Specifies the audience for this Federated Identity Credential.
 audience = ""
 
-# The Client ID which should be used.
-client_id = ""
-
-# The Client Secret which should be used.
-client_secret = ""
+# The ID of the Resource Account which should be used.
+driver_account = ""
 
 # Specifies the issuer of this Federated Identity Credential.
 issuer = ""
@@ -34,6 +34,3 @@ subject = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""
-
-# The Tenant ID which should be used.
-tenant_id = ""

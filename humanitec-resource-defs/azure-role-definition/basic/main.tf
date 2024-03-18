@@ -4,19 +4,23 @@ resource "humanitec_resource_definition" "main" {
   name        = "${var.prefix}role-definition-basic"
   type        = "azure-role-definition"
 
+  driver_account = var.driver_account
   driver_inputs = {
-    secrets_string = jsonencode({
-      variables = {
-        client_id     = var.client_id
-        client_secret = var.client_secret
-      }
-    })
-
     values_string = jsonencode({
       source = {
         path = "modules/azure-role-definition/basic"
         rev  = var.resource_packs_azure_rev
         url  = var.resource_packs_azure_url
+      }
+
+      append_logs_to_error = var.append_logs_to_error
+
+      credentials_config = {
+        environment = {
+          ARM_CLIENT_ID     = "appId"
+          ARM_CLIENT_SECRET = "password"
+          ARM_TENANT_ID     = "tenant"
+        }
       }
 
       variables = {
@@ -26,7 +30,6 @@ resource "humanitec_resource_definition" "main" {
         prefix = var.prefix
 
         name            = var.name
-        tenant_id       = var.tenant_id
         subscription_id = var.subscription_id
         prefix          = var.prefix
         scope           = var.scope
