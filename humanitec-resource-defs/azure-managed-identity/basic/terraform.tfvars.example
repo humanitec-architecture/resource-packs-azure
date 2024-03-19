@@ -22,3 +22,6 @@ resource_packs_azure_url = "https://github.com/humanitec-architecture/resource-p
 
 # The Subscription ID which should be used.
 subscription_id = ""
+
+# Use terraform remote state.
+terraform_state = ""

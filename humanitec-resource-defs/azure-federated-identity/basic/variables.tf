@@ -62,3 +62,15 @@ variable "subject" {
   description = "Specifies the subject for this Federated Identity Credential."
   type        = string
 }
+
+variable "terraform_state" {
+  description = "Use terraform remote state."
+  type = object({
+    subscription_id      = string
+    resource_group_name  = string
+    storage_account_name = string
+    container_name       = string
+    key_prefix           = optional(string)
+  })
+  default = null
+}

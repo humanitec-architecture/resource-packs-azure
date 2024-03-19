@@ -17,7 +17,7 @@ resource "azuread_service_principal_password" "humanitec_provisioner" {
 
 resource "azurerm_role_assignment" "resource_group_workload" {
   scope                = data.azurerm_resource_group.main.id
-  role_definition_name = "Contributor"
+  role_definition_name = "Owner"
   principal_id         = azuread_service_principal.humanitec_provisioner.object_id
 }
 
@@ -32,6 +32,11 @@ resource "humanitec_resource_account" "humanitec_provisioner" {
     "password" : azuread_service_principal_password.humanitec_provisioner.value,
     "tenant" : azuread_service_principal.humanitec_provisioner.application_tenant_id
   })
+
+  depends_on = [
+    # Otherwise the account looses permissions before the resources are deleted
+    azurerm_role_assignment.resource_group_workload
+  ]
 }
 
 # Example application and resource definition criteria

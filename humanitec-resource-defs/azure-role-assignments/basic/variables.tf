@@ -50,3 +50,15 @@ variable "role_definition_ids" {
 variable "scopes" {
   type = any
 }
+
+variable "terraform_state" {
+  description = "Use terraform remote state."
+  type = object({
+    subscription_id      = string
+    resource_group_name  = string
+    storage_account_name = string
+    container_name       = string
+    key_prefix           = optional(string)
+  })
+  default = null
+}

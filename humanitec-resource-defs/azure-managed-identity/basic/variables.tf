@@ -42,3 +42,15 @@ variable "resource_group_name" {
   description = "Specifies the Name of the Resource Group within which created resources will reside."
   type        = string
 }
+
+variable "terraform_state" {
+  description = "Use terraform remote state."
+  type = object({
+    subscription_id      = string
+    resource_group_name  = string
+    storage_account_name = string
+    container_name       = string
+    key_prefix           = optional(string)
+  })
+  default = null
+}

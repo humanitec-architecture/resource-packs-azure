@@ -28,6 +28,7 @@ The workload service account will automatically be assigned the necessary Azure 
 | azuread | ~> 2.47 |
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
+| random | ~> 3.6 |
 
 ## Providers
 
@@ -36,6 +37,7 @@ The workload service account will automatically be assigned the necessary Azure 
 | azuread | ~> 2.47 |
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
+| random | ~> 3.6 |
 
 ## Modules
 
@@ -60,6 +62,8 @@ The workload service account will automatically be assigned the necessary Azure 
 | [azuread_service_principal.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal) | resource |
 | [azuread_service_principal_password.humanitec_provisioner](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs/resources/service_principal_password) | resource |
 | [azurerm_role_assignment.resource_group](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/role_assignment) | resource |
+| [azurerm_storage_account.tfstate](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
+| [azurerm_storage_container.tfstate](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container) | resource |
 | [humanitec_application.example](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
 | [humanitec_resource_account.humanitec_provisioner](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
 | [humanitec_resource_definition_criteria.blob_storage](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
@@ -72,6 +76,7 @@ The workload service account will automatically be assigned the necessary Azure 
 | [humanitec_resource_definition_criteria.role_definition_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.role_definition_reader](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
+| [random_string.storage_account_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs

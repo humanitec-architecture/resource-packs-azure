@@ -30,6 +30,7 @@
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-service-bus-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |
+| terraform\_state | Use terraform remote state. | <pre>object({<br>    subscription_id      = string<br>    resource_group_name  = string<br>    storage_account_name = string<br>    container_name       = string<br>    key_prefix           = optional(string)<br>  })</pre> | `null` | no |
 
 ## Outputs
 

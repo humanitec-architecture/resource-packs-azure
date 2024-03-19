@@ -1,7 +1,28 @@
+locals {
+  def_id         = "${var.prefix}federated-identity-basic"
+  remote_backend = <<EOT
+terraform {
+  required_version = ">= 1.0.0"
+
+  %{if var.terraform_state != null}backend "azurerm" {
+    subscription_id       = "${var.terraform_state.subscription_id}"
+    resource_group_name   = "${var.terraform_state.resource_group_name}"
+    storage_account_name  = "${var.terraform_state.storage_account_name}"
+    container_name        = "${var.terraform_state.container_name}"
+    key                   = "${coalesce(var.terraform_state.key_prefix, local.def_id)}/$${context.app.id}/$${context.env.id}/$${context.res.id}.tfstate"
+  }%{endif}
+}
+EOT
+  files = var.terraform_state != null ? {
+    "backend.tf" = local.remote_backend
+  } : {}
+}
+
+
 resource "humanitec_resource_definition" "main" {
   driver_type = "humanitec/terraform"
-  id          = "${var.prefix}federated-identity-basic"
-  name        = "${var.prefix}federated-identity-basic"
+  id          = local.def_id
+  name        = local.def_id
   type        = "azure-federated-identity"
 
   driver_account = var.driver_account
@@ -22,6 +43,8 @@ resource "humanitec_resource_definition" "main" {
           ARM_TENANT_ID     = "tenant"
         }
       }
+
+      files = local.files
 
       variables = {
         res_id = "$${context.res.id}"
