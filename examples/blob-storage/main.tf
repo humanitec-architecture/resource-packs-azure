@@ -47,6 +47,10 @@ resource "humanitec_application" "example" {
 }
 
 locals {
+  # Define the shared azure-blob-account resource id and class
+  azure_blob_account_res_id = "main-blob-account"
+  azure_blob_account_class  = "default"
+
   # Classes used to build the resource definition graph
   blob_storage_basic_class         = "basic"
   blob_storage_admin_policy_class  = "blob-storage-basic-admin"
@@ -56,15 +60,18 @@ locals {
   blob_storage_admin_class  = "basic-admin"
   blob_storage_reader_class = "basic-read-ony"
 
-  blob_storage_scope = "/subscriptions/${var.subscription_id}/resourceGroups/${var.resource_group_name}/providers/Microsoft.Storage/storageAccounts/$${resources['azure-blob.${local.blob_storage_basic_class}'].outputs.account}/blobServices/default/containers/$${resources['azure-blob.${local.blob_storage_basic_class}'].outputs.container}"
+  account_resource   = "azure-blob-account.${local.azure_blob_account_class}#${local.azure_blob_account_res_id}"
+  blob_storage_scope = "/subscriptions/${var.subscription_id}/resourceGroups/${var.resource_group_name}/providers/Microsoft.Storage/storageAccounts/$${resources['${local.account_resource}'].outputs.name}/blobServices/default/containers/$${resources['azure-blob.${local.blob_storage_basic_class}'].outputs.container}"
 
   # Azure build in role ids: https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
   build_in_azure_storage_blob_data_owner_role_id  = "/providers/Microsoft.Authorization/roleDefinitions/b7e6dc6d-f1e8-4753-8033-0f276bb0955b"
   build_in_azure_storage_blob_data_reader_role_id = "/providers/Microsoft.Authorization/roleDefinitions/2a2b9908-6ea1-4ae2-8e65-a410df84e7d1"
 }
 
-module "blob_storage" {
-  source = "../../humanitec-resource-defs/azure-blob/basic"
+# Shared azure-blob-account resource
+
+module "azure_blob_account" {
+  source = "../../humanitec-resource-defs/azure-blob-account/basic"
 
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
@@ -76,8 +83,31 @@ module "blob_storage" {
   prefix                   = var.prefix
   account_tier             = var.account_tier
   account_replication_type = var.account_replication_type
-  container_name           = var.container_name
+}
+
+resource "humanitec_resource_definition_criteria" "azure_blob_account" {
+  resource_definition_id = module.azure_blob_account.id
+  app_id                 = humanitec_application.example.id
+  res_id                 = local.azure_blob_account_res_id
+  class                  = local.azure_blob_account_class
+
+  force_delete = true
+}
+
+# Workload or shared blob-storage resources
+
+module "blob_storage" {
+  source = "../../humanitec-resource-defs/azure-blob/basic"
+
+  resource_packs_azure_url = var.resource_packs_azure_url
+  resource_packs_azure_rev = var.resource_packs_azure_rev
+  append_logs_to_error     = true
+  terraform_state          = local.terraform_state
+  driver_account           = humanitec_resource_account.humanitec_provisioner.id
+  subscription_id          = var.subscription_id
+  prefix                   = var.prefix
   container_access_type    = var.container_access_type
+  account_resource         = local.account_resource
 }
 
 resource "humanitec_resource_definition_criteria" "blob_storage" {

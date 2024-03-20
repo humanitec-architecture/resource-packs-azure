@@ -27,7 +27,7 @@ mysql_version = "5.7"
 name = ""
 
 # Specifies the prefix used in default name for created resources.
-prefix = "hum-rp-mysql-ex-"
+prefix = ""
 
 # Whether or not public network access is allowed for this server.
 public_network_access_enabled = false

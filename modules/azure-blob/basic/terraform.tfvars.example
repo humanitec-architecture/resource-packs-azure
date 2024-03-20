@@ -1,17 +1,7 @@
-
-# Defines the type of replication to use for this storage account.
-account_replication_type = "GRS"
-
-# Defines the Tier to use for this storage account.
-account_tier = "Standard"
-
 app_id = ""
 
 # The Access Level configured for this Container.
 container_access_type = "private"
-
-# The name of the Container which should be created within the Storage Account.
-container_name = ""
 
 env_id = ""
 
@@ -23,8 +13,8 @@ prefix = "hum-rp-blob-storage-ex-"
 
 res_id = ""
 
-# Specifies the Name of the Resource Group within which created resources will reside.
-resource_group_name = ""
+# The Name of the Storage Account which should be used for the Container.
+storage_account_name = ""
 
 # The Subscription ID which should be used.
 subscription_id = ""

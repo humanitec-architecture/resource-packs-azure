@@ -26,11 +26,6 @@ variable "subscription_id" {
   type        = string
 }
 
-variable "resource_group_name" {
-  description = "Specifies the Name of the Resource Group within which created resources will reside."
-  type        = string
-}
-
 variable "name" {
   description = "Specifies the Name for created resources. (Leave empty for the default one)"
   type        = string
@@ -43,20 +38,8 @@ variable "prefix" {
   default     = "hum-rp-blob-storage-ex-"
 }
 
-variable "account_tier" {
-  description = "Defines the Tier to use for this storage account."
-  type        = string
-  default     = "Standard"
-}
-
-variable "account_replication_type" {
-  description = "Defines the type of replication to use for this storage account."
-  type        = string
-  default     = "GRS"
-}
-
-variable "container_name" {
-  description = "The name of the Container which should be created within the Storage Account."
+variable "account_resource" {
+  description = "The Name of azure-blob-account resource to be used."
   type        = string
 }
 

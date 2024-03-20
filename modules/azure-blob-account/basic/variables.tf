@@ -1,15 +1,3 @@
-variable "resource_packs_azure_url" {
-  description = "Azure Resource Pack git url."
-  type        = string
-  default     = "https://github.com/humanitec-architecture/resource-packs-azure.git"
-}
-
-variable "resource_packs_azure_rev" {
-  description = "Azure Resource Pack git branch."
-  type        = string
-  default     = "refs/heads/main"
-}
-
 variable "subscription_id" {
   description = "The Subscription ID which should be used."
   type        = string
@@ -20,10 +8,22 @@ variable "resource_group_name" {
   type        = string
 }
 
+variable "res_id" {
+  type = string
+}
+
+variable "app_id" {
+  type = string
+}
+
+variable "env_id" {
+  type = string
+}
+
 variable "name" {
-  description = "Specifies the Name for created example application."
+  description = "Specifies the Name for created resources. (Leave empty for the default one)"
   type        = string
-  default     = "hum-rp-blob-storage-example"
+  default     = ""
 }
 
 variable "prefix" {
@@ -42,15 +42,4 @@ variable "account_replication_type" {
   description = "Defines the type of replication to use for this storage account."
   type        = string
   default     = "GRS"
-}
-
-variable "container_access_type" {
-  description = "The Access Level configured for this Container."
-  type        = string
-  default     = "private"
-}
-
-variable "aks_cluster_issuer_url" {
-  description = "AKS OIDC Issuer URL"
-  type        = string
 }

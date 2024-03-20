@@ -21,7 +21,7 @@ minimum_tls_version = "1.2"
 name = ""
 
 # Specifies the prefix used in default name for created resources.
-prefix = "hum-rp-mysql-ex-"
+prefix = ""
 
 # Specifies the Name of the Resource Group within which this database will reside.
 resource_group_name = ""

@@ -11,7 +11,6 @@ resources:
     type: dns
 ```
 
-
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

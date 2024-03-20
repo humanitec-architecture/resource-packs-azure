@@ -51,6 +51,7 @@ module "dns" {
   resource_packs_azure_url = var.resource_packs_azure_url
   resource_packs_azure_rev = var.resource_packs_azure_rev
   append_logs_to_error     = true
+  prefix                   = var.prefix
   driver_account           = humanitec_resource_account.humanitec_provisioner.id
   subscription_id          = var.subscription_id
   resource_group_name      = var.resource_group_name

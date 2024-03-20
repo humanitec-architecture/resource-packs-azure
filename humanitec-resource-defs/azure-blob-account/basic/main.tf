@@ -1,5 +1,5 @@
 locals {
-  def_id         = "${var.prefix}managed-identity-basic"
+  def_id         = "${var.prefix}azure-blob-account-basic"
   remote_backend = <<EOT
 terraform {
   required_version = ">= 1.0.0"
@@ -18,18 +18,17 @@ EOT
   } : {}
 }
 
-
 resource "humanitec_resource_definition" "main" {
   driver_type = "humanitec/terraform"
   id          = local.def_id
   name        = local.def_id
-  type        = "azure-managed-identity"
+  type        = "azure-blob-account"
 
   driver_account = var.driver_account
   driver_inputs = {
     values_string = jsonencode({
       source = {
-        path = "modules/azure-managed-identity/basic"
+        path = "modules/azure-blob-account/basic"
         rev  = var.resource_packs_azure_rev
         url  = var.resource_packs_azure_url
       }
@@ -51,18 +50,13 @@ resource "humanitec_resource_definition" "main" {
         app_id = "$${context.app.id}"
         env_id = "$${context.env.id}"
 
-        name                = var.name
-        subscription_id     = var.subscription_id
-        prefix              = var.prefix
-        resource_group_name = var.resource_group_name
+        subscription_id          = var.subscription_id
+        resource_group_name      = var.resource_group_name
+        name                     = var.name
+        prefix                   = var.prefix
+        account_tier             = var.account_tier
+        account_replication_type = var.account_replication_type
       }
     })
-  }
-
-  provision = {
-    "azure-role-assignments" = {
-      match_dependents = false
-      is_dependent     = true
-    }
   }
 }
