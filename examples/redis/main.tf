@@ -45,7 +45,7 @@ resource "humanitec_application" "example" {
   name = var.name
 }
 
-module "dns" {
+module "redis" {
   source = "../../humanitec-resource-defs/redis/basic"
 
   resource_packs_azure_url = var.resource_packs_azure_url
@@ -58,6 +58,6 @@ module "dns" {
 }
 
 resource "humanitec_resource_definition_criteria" "redis" {
-  resource_definition_id = module.dns.id
+  resource_definition_id = module.redis.id
   app_id                 = humanitec_application.example.id
 }

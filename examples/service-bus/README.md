@@ -1,5 +1,7 @@
 # Example: azure-service-bus-queue resource based on Azure Service Bus Queue
 
+## Configuration
+
 This example configures a [azure-service-bus-queue](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#azure-service-bus-queue) Resource Definition using Azure Service Bus, with two different access policies:
 
 * `basic-publisher` (allowed to send messages)
@@ -15,9 +17,49 @@ resources:
     class: basic-publisher
 ```
 
+## Infrastructure setup
+
+The workload service account will automatically be assigned the necessary Azure Role.
+
+```mermaid
+graph TD;
+    subgraph Resource Group
+        subgraph account["Azure Service Bus"]
+            queue["Azure Service Bus Queue"]
+        end
+        k8s-service-account[K8s Service Account] -- azure federated identity --> azure-managed-identity[Azure Managed identity]
+        azure-managed-identity -- publisher role --> queue
+        subgraph AKS Cluster
+            workload-pod[Workload Pod] --> k8s-service-account
+            workload-pod -- operations --> queue
+        end
+    end
+```
+
+## Orchestrator setup
+
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
-The workload service account will automatically be assigned the necessary roles.
+```mermaid
+graph TD;
+    workload_1 --> k8s_sa_1["k8s_service_account_1, resource_type: k8s-service-account"]:::policy
+    workload_1 --> queue_delegator_1["delegator_1, resource_type: azure-service-bus-queue"]
+    queue_delegator_1 --> shared_queue_1["shared.queue_1, resource_type: azure-service-bus-queue"]
+
+    az_fi_1["azure_federated_identity, resource_type: azure-federated-identity"]:::policy --> k8s_sa_1
+    az_fi_1 --> az_mi_1["azure_managed_identity, resource_type: azure-managed-identity"]:::policy
+    
+    az_ra_1["azure_role_assignments, resource_type: azure-role-assignments"]:::policy --> az_mi_1
+    az_ra_1 --> az_rd_1["azure_role_definition, resource_type: azure-role-definition"]:::policy
+    az_rd_1 -- publisher --> queue_delegator_1
+
+    workload_2 --> p_2["identities & roles setup similar to workload 1"]:::policy
+    workload_2 --> queue_delegator_2["delegator_2, resource_type: azure-service-bus-queue"]
+    p_2 -- consumer --> queue_delegator_2
+    queue_delegator_2 --> shared_queue_1
+
+    classDef policy fill:#f96
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

@@ -1,5 +1,7 @@
 # Example: mysql resource based on Azure Database for MySQL
 
+## Configuration
+
 This example configures a [mysql](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#mysql) Resource Definition using Azure Database for MySQL.
 
 The created definition can be used in your Score file using:
@@ -11,6 +13,31 @@ resources:
     type: mysql
 ```
 
+## Infrastructure setup
+
+```mermaid
+graph TD;
+    subgraph Resource Group
+        db["Azure Database for MySQL"]
+        subgraph Workload Virtual Network
+          private["Private IP"]
+          subgraph AKS Cluster
+              workload-pod[Workload Pod]
+          end
+        end
+        workload-pod --> private
+        db -- private endpoint --> private
+    end
+```
+
+## Orchestrator setup
+
+```mermaid
+graph TD;
+    workload_1 --> db_1["db_1, resource_type: mysql"]
+    workload_1 --> shared_db_1["shared.db_1", resource_type: mysql]
+    workload_2 --> shared_db_1
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
