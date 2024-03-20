@@ -24,7 +24,6 @@ variable "name" {
 variable "prefix" {
   description = "Specifies the prefix used in default name for created resources."
   type        = string
-  default     = "hum-rp-mysql-ex-"
 }
 
 variable "resource_group_name" {

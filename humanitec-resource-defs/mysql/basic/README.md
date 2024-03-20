@@ -25,6 +25,7 @@
 | administrator\_login | The Administrator login for the MySQL Server. | `string` | n/a | yes |
 | administrator\_login\_password | The Password associated with the administrator\_login for the MySQL Server. | `string` | n/a | yes |
 | driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
+| prefix | Specifies the prefix used in default name for created resources. | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
 | subnet\_name | The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
@@ -36,7 +37,6 @@
 | geo\_redundant\_backup\_enabled | Turn Geo-redundant server backups on/off. | `bool` | `true` | no |
 | mysql\_version | Specifies the version of MySQL to use. | `string` | `"5.7"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
-| prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-mysql-ex-"` | no |
 | public\_network\_access\_enabled | Whether or not public network access is allowed for this server. | `bool` | `false` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |

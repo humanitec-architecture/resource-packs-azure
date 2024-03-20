@@ -1,11 +1,17 @@
 # Example: azure-blob resource based on Azure Blob Storage
 
-This example configures a [azure-blob](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#azure-blob) Resource Definition using Azure Blob Storage, with two different access policies:
+## Configuration
+
+This example configures an [azure-blob](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#azure-blob) and an [azure-blob-account](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#azure-blob-account) Resource Definition to enable workloads to use Azure Blob Storage.
+
+The `azure-blob-account` represent the Azure Storage Account and is shared across all workloads.
+
+Workloads can use the `azure-blob` resource type to request Azure Storage Containers with two different access policies:
 
 * `basic-admin` (full access)
 * `basic-read-only` (read-only access)
 
-Those Resource Definitions can be used in your Score file using:
+From Score requesting a Azure Storage Container with full access looks like:
 
 ```yaml
 resources:
@@ -18,6 +24,49 @@ resources:
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
 The workload service account will automatically be assigned the necessary Azure Role.
+
+## Infrastructure setup
+
+```mermaid
+graph TD;
+    subgraph resource group
+        subgraph account["azure storage account"]
+            container["azure storage container"]
+        end
+        k8s-service-account -- azure-federated-identity --> azure-managed-identity
+        azure-managed-identity -- owner role --> container
+        subgraph aks-cluster
+            workload-pod --> k8s-service-account
+            workload-pod -- operations --> container
+        end
+    end
+```
+
+## Orchestrator setup
+
+```mermaid
+graph TD;
+    workload_1 --> k8s_sa_1["k8s_service_account_1, resource_type: k8s-service-account"]:::policy 
+    az_fi_1 --> az_mi_1["azure_managed_identity, resource_type: azure-managed-identity"]:::policy
+    az_ra_1["azure_role_assignments, resource_type: azure-role-assignments"]:::policy --> az_mi_1
+    az_ra_1 --> az_rd_1["azure_role_definition, resource_type: azure-role-definition"]:::policy
+    az_fi_1["azure_federated_identity, resource_type: azure-federated-identity"]:::policy --> k8s_sa_1
+    workload_1 --> blob_1["blob_1, resource_type: azure-blob"]
+    az_rd_1 -- owner --> blob_1
+    workload_2 --> p_2["identities & roles setup similar to workload 1"]:::policy
+    workload_2 --> blob_2["blob_2, resource_type: azure-blob"]
+    p_2 -- owner --> blob_2
+    workload_2 --> shared.blob_1["shared.blob_1, resource_type: azure-blob"]
+    p_2 -- owner --> shared.blob_1
+    workload_3 --> shared.blob_1["shared.blob_1, resource_type: azure-blob"]
+    workload_3 --> p_3["identities & roles setup similar to workload 1"]:::policy
+    p_3 -- reader --> shared.blob_1
+    blob_1 --> blob_account["main-blob-account, resource_type: azure-blob-account"]
+    blob_2 --> blob_account
+    shared.blob_1 --> blob_account
+
+    classDef policy fill:#f96
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -43,6 +92,7 @@ The workload service account will automatically be assigned the necessary Azure 
 
 | Name | Source | Version |
 |------|--------|---------|
+| azure\_blob\_account | ../../humanitec-resource-defs/azure-blob-account/basic | n/a |
 | blob\_storage | ../../humanitec-resource-defs/azure-blob/basic | n/a |
 | blob\_storage\_admin | ../../humanitec-resource-defs/azure-blob/delegator | n/a |
 | blob\_storage\_reader | ../../humanitec-resource-defs/azure-blob/delegator | n/a |
@@ -66,6 +116,7 @@ The workload service account will automatically be assigned the necessary Azure 
 | [azurerm_storage_container.tfstate](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container) | resource |
 | [humanitec_application.example](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/application) | resource |
 | [humanitec_resource_account.humanitec_provisioner](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_account) | resource |
+| [humanitec_resource_definition_criteria.azure_blob_account](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.blob_storage](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.blob_storage_admin](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [humanitec_resource_definition_criteria.blob_storage_reader](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
@@ -89,7 +140,6 @@ The workload service account will automatically be assigned the necessary Azure 
 | account\_replication\_type | Defines the type of replication to use for this storage account. | `string` | `"GRS"` | no |
 | account\_tier | Defines the Tier to use for this storage account. | `string` | `"Standard"` | no |
 | container\_access\_type | The Access Level configured for this Container. | `string` | `"private"` | no |
-| container\_name | The name of the Container which should be created within the Storage Account. | `string` | `"hum-rp-blob-storage-example"` | no |
 | name | Specifies the Name for created example application. | `string` | `"hum-rp-blob-storage-example"` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-blob-storage-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |

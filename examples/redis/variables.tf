@@ -15,6 +15,12 @@ variable "subscription_id" {
   type        = string
 }
 
+variable "prefix" {
+  description = "Prefix of the created resources"
+  type        = string
+  default     = "hum-rp-redis-ex-"
+}
+
 variable "name" {
   description = "Specifies the Name for created application."
   type        = string

@@ -3,11 +3,6 @@ variable "subscription_id" {
   type        = string
 }
 
-variable "resource_group_name" {
-  description = "Specifies the Name of the Resource Group within which created resources will reside."
-  type        = string
-}
-
 variable "res_id" {
   type = string
 }
@@ -32,20 +27,8 @@ variable "prefix" {
   default     = "hum-rp-blob-storage-ex-"
 }
 
-variable "account_tier" {
-  description = "Defines the Tier to use for this storage account."
-  type        = string
-  default     = "Standard"
-}
-
-variable "account_replication_type" {
-  description = "Defines the type of replication to use for this storage account."
-  type        = string
-  default     = "GRS"
-}
-
-variable "container_name" {
-  description = "The name of the Container which should be created within the Storage Account."
+variable "storage_account_name" {
+  description = "The Name of the Storage Account which should be used for the Container."
   type        = string
 }
 

@@ -23,6 +23,7 @@
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
+| prefix | Specifies the prefix used in default name for created resources. | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which this database will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
@@ -31,7 +32,6 @@
 | family | The SKU family/pricing group to use. | `string` | `"C"` | no |
 | minimum\_tls\_version | The minimum TLS version. | `string` | `"1.2"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
-| prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-mysql-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |
 | resource\_packs\_azure\_url | Azure Resource Pack git url. | `string` | `"https://github.com/humanitec-architecture/resource-packs-azure.git"` | no |
 | sku\_name | The SKU of Redis to use. | `string` | `"Standard"` | no |

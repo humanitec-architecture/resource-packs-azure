@@ -16,7 +16,8 @@
 
 | Name | Type |
 |------|------|
-| [azurerm_storage_container.container](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container) | resource |
+| [azurerm_storage_account.account](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) | resource |
+| [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
 ## Inputs
 
@@ -25,9 +26,10 @@
 | app\_id | n/a | `string` | n/a | yes |
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
-| storage\_account\_name | The Name of the Storage Account which should be used for the Container. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
-| container\_access\_type | The Access Level configured for this Container. | `string` | `"private"` | no |
+| account\_replication\_type | Defines the type of replication to use for this storage account. | `string` | `"GRS"` | no |
+| account\_tier | Defines the Tier to use for this storage account. | `string` | `"Standard"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-blob-storage-ex-"` | no |
 
@@ -35,6 +37,5 @@
 
 | Name | Description |
 |------|-------------|
-| account | n/a |
-| container | n/a |
+| name | n/a |
 <!-- END_TF_DOCS -->

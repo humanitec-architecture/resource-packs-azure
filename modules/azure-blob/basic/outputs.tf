@@ -1,5 +1,5 @@
 output "account" {
-  value = azurerm_storage_account.account.name
+  value = var.storage_account_name
 }
 
 output "container" {

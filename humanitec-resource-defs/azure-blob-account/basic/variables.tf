@@ -10,6 +10,17 @@ variable "resource_packs_azure_rev" {
   default     = "refs/heads/main"
 }
 
+variable "append_logs_to_error" {
+  description = "Append Terraform logs to error messages."
+  type        = bool
+  default     = false
+}
+
+variable "driver_account" {
+  description = "The ID of the Resource Account which should be used."
+  type        = string
+}
+
 variable "subscription_id" {
   description = "The Subscription ID which should be used."
   type        = string
@@ -21,9 +32,9 @@ variable "resource_group_name" {
 }
 
 variable "name" {
-  description = "Specifies the Name for created example application."
+  description = "Specifies the Name for created resources. (Leave empty for the default one)"
   type        = string
-  default     = "hum-rp-blob-storage-example"
+  default     = ""
 }
 
 variable "prefix" {
@@ -44,13 +55,14 @@ variable "account_replication_type" {
   default     = "GRS"
 }
 
-variable "container_access_type" {
-  description = "The Access Level configured for this Container."
-  type        = string
-  default     = "private"
-}
-
-variable "aks_cluster_issuer_url" {
-  description = "AKS OIDC Issuer URL"
-  type        = string
+variable "terraform_state" {
+  description = "Use terraform remote state."
+  type = object({
+    subscription_id      = string
+    resource_group_name  = string
+    storage_account_name = string
+    container_name       = string
+    key_prefix           = optional(string)
+  })
+  default = null
 }

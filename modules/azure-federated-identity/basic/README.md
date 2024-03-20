@@ -27,12 +27,12 @@
 | env\_id | n/a | `string` | n/a | yes |
 | issuer | Specifies the issuer of this Federated Identity Credential. | `string` | n/a | yes |
 | parent\_id | Specifies parent ID of User Assigned Identity for this Federated Identity Credential. | `string` | n/a | yes |
+| prefix | Specifies the prefix used in default name for created resources. | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subject | Specifies the subject for this Federated Identity Credential. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
-| prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-mysql-ex-"` | no |
 
 ## Outputs
 

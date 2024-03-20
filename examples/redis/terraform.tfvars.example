@@ -2,6 +2,9 @@
 # Specifies the Name for created application.
 name = "hum-rp-redis-example"
 
+# Prefix of the created resources
+prefix = "hum-rp-redis-ex-"
+
 # Specifies the Name of the Resource Group within which this database will reside.
 resource_group_name = ""
 

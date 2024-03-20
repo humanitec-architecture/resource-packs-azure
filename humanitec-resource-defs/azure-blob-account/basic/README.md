@@ -22,11 +22,12 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| account\_resource | The Name of azure-blob-account resource to be used. | `string` | n/a | yes |
 | driver\_account | The ID of the Resource Account which should be used. | `string` | n/a | yes |
+| resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
+| account\_replication\_type | Defines the type of replication to use for this storage account. | `string` | `"GRS"` | no |
+| account\_tier | Defines the Tier to use for this storage account. | `string` | `"Standard"` | no |
 | append\_logs\_to\_error | Append Terraform logs to error messages. | `bool` | `false` | no |
-| container\_access\_type | The Access Level configured for this Container. | `string` | `"private"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-blob-storage-ex-"` | no |
 | resource\_packs\_azure\_rev | Azure Resource Pack git branch. | `string` | `"refs/heads/main"` | no |

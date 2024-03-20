@@ -15,7 +15,7 @@ name = ""
 parent_id = ""
 
 # Specifies the prefix used in default name for created resources.
-prefix = "hum-rp-mysql-ex-"
+prefix = ""
 
 res_id = ""
 
