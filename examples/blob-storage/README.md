@@ -21,28 +21,29 @@ resources:
     class: basic-admin
 ```
 
-The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
+## Infrastructure setup
 
 The workload service account will automatically be assigned the necessary Azure Role.
 
-## Infrastructure setup
-
 ```mermaid
 graph TD;
-    subgraph resource group
-        subgraph account["azure storage account"]
-            container["azure storage container"]
+    subgraph Resource Group
+        subgraph account["Azure Storage Account"]
+            container["Azure Storage Container"]
         end
-        k8s-service-account -- azure-federated-identity --> azure-managed-identity
+        k8s-service-account["K8s Service Account"] -- azure federated identity --> azure-managed-identity["Azure Managed Identity"]
         azure-managed-identity -- owner role --> container
-        subgraph aks-cluster
-            workload-pod --> k8s-service-account
+        subgraph AKS Cluster
+            workload-pod["Workload Pod"] --> k8s-service-account
             workload-pod -- operations --> container
         end
     end
 ```
 
 ## Orchestrator setup
+
+The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
+
 
 ```mermaid
 graph TD;
@@ -51,20 +52,15 @@ graph TD;
     az_ra_1["azure_role_assignments, resource_type: azure-role-assignments"]:::policy --> az_mi_1
     az_ra_1 --> az_rd_1["azure_role_definition, resource_type: azure-role-definition"]:::policy
     az_fi_1["azure_federated_identity, resource_type: azure-federated-identity"]:::policy --> k8s_sa_1
-    workload_1 --> blob_1["blob_1, resource_type: azure-blob"]
+    workload_1 --> blob_1["delegator_blob_1, resource_type: azure-blob"]
     az_rd_1 -- owner --> blob_1
     workload_2 --> p_2["identities & roles setup similar to workload 1"]:::policy
-    workload_2 --> blob_2["blob_2, resource_type: azure-blob"]
-    p_2 -- owner --> blob_2
-    workload_2 --> shared.blob_1["shared.blob_1, resource_type: azure-blob"]
-    p_2 -- owner --> shared.blob_1
-    workload_3 --> shared.blob_1["shared.blob_1, resource_type: azure-blob"]
-    workload_3 --> p_3["identities & roles setup similar to workload 1"]:::policy
-    p_3 -- reader --> shared.blob_1
-    blob_1 --> blob_account["main-blob-account, resource_type: azure-blob-account"]
-    blob_2 --> blob_account
-    shared.blob_1 --> blob_account
-
+    workload_2 --> blob_2["delegator_blob_2, resource_type: azure-blob"]
+    p_2 -- reader --> blob_2
+    blob_1 --> shared.blob_1["shared.blob_1, resource_type: azure-blob"]
+    blob_2 --> shared.blob_1
+    shared.blob_1 --> blob_account["shared.main-blob-account, resource_type: azure-blob-account"]
+    
     classDef policy fill:#f96
 ```
 

@@ -1,5 +1,7 @@
 # Example: dns resource based on Azure Cloud DNS
 
+## Configuration
+
 This example configures a [dns](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#dns) Resource Definition using Azure Cloud DNS.
 
 The created Resource Definition can be used in your Score file using:
@@ -9,6 +11,30 @@ resources:
   ...
   dns:
     type: dns
+```
+
+## Infrastructure setup
+
+```mermaid
+graph TD;
+    subgraph Resource Group
+        subgraph Azure Hosted Zone
+          record["Azure DNS record"]
+        end
+        subgraph AKS Cluster
+            workload-pod[Workload Pod]
+        end
+        workload-pod --> record
+    end
+```
+
+## Orchestrator setup
+
+```mermaid
+graph TD;
+    workload_1 --> dns_1["dns_1, resource_type: dns"]
+    workload_1 --> shared_dns_1["shared.dns_1", resource_type: dns]
+    workload_2 --> shared_dns_1
 ```
 
 <!-- BEGIN_TF_DOCS -->

@@ -8,7 +8,7 @@ Using this examples requires the "Enable Private Endpoints for PostgreSQL flexib
 
 ## Configuration
 
-This example configures a [postgres-instance](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres-instance) and [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres)  Resource Definition using Azure Database for PostgresSQL - Flexible Server.
+This example configures a [postgres-instance](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres-instance) and [postgres](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#postgres)  Resource Definition using Azure Database for PostgreSQL - Flexible Server.
 
 The `postgres-instance` represent the actual server and is provisioned only once for the entire environment.
 
@@ -26,19 +26,19 @@ resources:
 
 ```mermaid
 graph TD;
-    subgraph database resource group
-        subgraph server["postgres flexible server"]
-            database["postgres flexible server database"]
+    subgraph Database Resource Group
+        subgraph server["Azure Database for PostgreSQL - Flexible Server"]
+            database["SQL Database"]
         end
     end
-    subgraph workload resource group
-       subgraph workload vnet
-          pip["private IP"]
+    subgraph Workload Resource Group
+       subgraph Workload Virtual Network
+          pip["Private IP"]
           server -- private endpoint --> pip
-
-          subgraph aks-cluster
-            workload-pod --> pip
+          subgraph AKS Cluster
+            workload-pod["Workload Pod"]
           end
+            workload-pod --> pip
        end
     end
 ```

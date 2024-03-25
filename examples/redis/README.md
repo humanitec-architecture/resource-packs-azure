@@ -1,5 +1,7 @@
 # Example: Redis resource based on Azure Cache for Redis
 
+## Configuration
+
 This example configures a [redis](https://developer.humanitec.com/platform-orchestrator/reference/resource-types/#redis) Resource Definition using Azure Cache for Redis.
 
 The created definition can be used in your Score file using:
@@ -11,6 +13,27 @@ resources:
     type: redis
 ```
 
+## Infrastructure setup
+
+```mermaid
+graph TD;
+    subgraph Resource Group
+        cache["Azure Cache for Redis"]
+        subgraph AKS Cluster
+            workload-pod[Workload Pod]
+        end
+        workload-pod --> cache
+    end
+```
+
+## Orchestrator setup
+
+```mermaid
+graph TD;
+    workload_1 --> cache_1["cache_1, resource_type: redis"]
+    workload_1 --> shared_cache_1["shared.cache_1", resource_type: redis]
+    workload_2 --> shared_cache_1
+```
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -34,7 +57,7 @@ resources:
 
 | Name | Source | Version |
 |------|--------|---------|
-| dns | ../../humanitec-resource-defs/redis/basic | n/a |
+| redis | ../../humanitec-resource-defs/redis/basic | n/a |
 
 ## Resources
 
