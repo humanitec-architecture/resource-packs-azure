@@ -1,18 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | azurerm | ~> 3.91 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | azurerm | ~> 3.91 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -21,7 +21,7 @@
 | [azurerm_dns_cname_record.example](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_cname_record) | resource |
 | [azurerm_dns_zone.zone](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/dns_zone) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -36,7 +36,7 @@
 | ipv6\_address | The IPv6 address that the DNS name should resolve to. | `string` | `""` | no |
 | name | A valid fully qualified domain name that the DNS name should resolve to. | `string` | `""` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

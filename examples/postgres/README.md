@@ -1,3 +1,8 @@
+---
+features:
+- shared-instance
+--- 
+
 # Example: postgres resource based on Azure Database for PostgresSQL
 
 ---
@@ -56,8 +61,10 @@ graph LR;
     shared.db_1 --> server
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -66,7 +73,7 @@ graph LR;
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -74,14 +81,14 @@ graph LR;
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | postgres | ../../humanitec-resource-defs/postgres/basic | n/a |
 | postgres\_instance | ../../humanitec-resource-defs/postgres-instance/basic | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -97,7 +104,7 @@ graph LR;
 | [azurerm_resource_group.resource](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 | [azurerm_resource_group.workload](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
