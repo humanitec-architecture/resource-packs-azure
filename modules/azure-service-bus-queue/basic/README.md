@@ -1,18 +1,18 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | azurerm | ~> 3.91 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | azurerm | ~> 3.91 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -20,7 +20,7 @@
 | [azurerm_servicebus_queue.queue](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_queue) | resource |
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -33,7 +33,7 @@
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-service-bus-ex-"` | no |
 | sku | Defines which tier to use. | `string` | `"Standard"` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

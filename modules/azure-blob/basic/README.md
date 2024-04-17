@@ -1,24 +1,24 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | azurerm | ~> 3.91 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | azurerm | ~> 3.91 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [azurerm_storage_container.container](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container) | resource |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -31,7 +31,7 @@
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `"hum-rp-blob-storage-ex-"` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

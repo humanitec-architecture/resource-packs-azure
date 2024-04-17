@@ -1,5 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -7,14 +7,14 @@
 | azurerm | ~> 3.91 |
 | random | ~> 3.6 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | azurerm | ~> 3.91 |
 | random | ~> 3.6 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -26,7 +26,7 @@
 | [azurerm_subnet.vn_subnets](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
 | [azurerm_virtual_network.vn](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/virtual_network) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -49,7 +49,7 @@
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
 | prefix | Specifies the prefix used in default name for created resources. | `string` | `""` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

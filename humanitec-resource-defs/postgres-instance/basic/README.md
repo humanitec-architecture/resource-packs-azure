@@ -1,24 +1,24 @@
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
 | terraform | >= 1.3.0 |
 | humanitec | ~> 1.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
 | humanitec | ~> 1.0 |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
 | [humanitec_resource_definition.main](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition) | resource |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -42,7 +42,7 @@
 | sku\_name | Specifies the SKU Name for this PostgreSQL Server. | `string` | `"B_Standard_B2s"` | no |
 | storage\_mb | Max storage allowed for a server. | `number` | `65536` | no |
 
-## Outputs
+### Outputs
 
 | Name | Description |
 |------|-------------|

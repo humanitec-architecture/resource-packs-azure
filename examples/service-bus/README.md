@@ -1,3 +1,9 @@
+---
+features:
+- workload-identity
+- multiple-access-classes
+--- 
+
 # Example: azure-service-bus-queue resource based on Azure Service Bus Queue
 
 ## Configuration
@@ -61,8 +67,10 @@ graph TD;
     classDef policy fill:#f96
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -71,7 +79,7 @@ graph TD;
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -79,7 +87,7 @@ graph TD;
 | azurerm | ~> 3.91 |
 | humanitec | ~> 1.0 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
@@ -94,7 +102,7 @@ graph TD;
 | service\_bus\_publisher | ../../humanitec-resource-defs/azure-service-bus-queue/delegator | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -116,7 +124,7 @@ graph TD;
 | [humanitec_resource_definition_criteria.workload](https://registry.terraform.io/providers/humanitec/humanitec/latest/docs/resources/resource_definition_criteria) | resource |
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|

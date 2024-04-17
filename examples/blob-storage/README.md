@@ -1,3 +1,10 @@
+---
+features:
+- workload-identity
+- multiple-access-classes
+- remote-terraform-state
+--- 
+
 # Example: azure-blob resource based on Azure Blob Storage
 
 ## Configuration
@@ -44,7 +51,6 @@ graph TD;
 
 The Resource Graph is using [delegator resources](https://developer.humanitec.com/platform-orchestrator/examples/resource-graph-patterns/#delegator-resource) to expose shared resources with different access policies.
 
-
 ```mermaid
 graph TD;
     workload_1 --> k8s_sa_1["k8s_service_account_1, resource_type: k8s-service-account"]:::policy 
@@ -64,8 +70,10 @@ graph TD;
     classDef policy fill:#f96
 ```
 
+## Terraform docs
+
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+### Requirements
 
 | Name | Version |
 |------|---------|
@@ -75,7 +83,7 @@ graph TD;
 | humanitec | ~> 1.0 |
 | random | ~> 3.6 |
 
-## Providers
+### Providers
 
 | Name | Version |
 |------|---------|
@@ -84,7 +92,7 @@ graph TD;
 | humanitec | ~> 1.0 |
 | random | ~> 3.6 |
 
-## Modules
+### Modules
 
 | Name | Source | Version |
 |------|--------|---------|
@@ -100,7 +108,7 @@ graph TD;
 | role\_definition\_reader | ../../humanitec-resource-defs/azure-role-definition/echo | n/a |
 | workload | ../../humanitec-resource-defs/workload/service-account | n/a |
 
-## Resources
+### Resources
 
 | Name | Type |
 |------|------|
@@ -126,7 +134,7 @@ graph TD;
 | [random_string.storage_account_suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [azurerm_resource_group.main](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/resource_group) | data source |
 
-## Inputs
+### Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
