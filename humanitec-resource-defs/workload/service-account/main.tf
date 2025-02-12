@@ -16,7 +16,7 @@ update:
     value: $${resources.k8s-service-account.outputs.name}
   - op: add
     path: /spec/labels/azure.workload.identity~1use
-    value: true
+    value: "true"
 EOL
       }
     })
