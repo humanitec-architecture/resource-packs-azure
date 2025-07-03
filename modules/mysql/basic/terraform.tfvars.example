@@ -53,9 +53,6 @@ storage_mb = ""
 # The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint.
 subnet_name = ""
 
-# The Subscription ID which should be used.
-subscription_id = ""
-
 # The name of the virtual network where Private Endpoint will be allocated.
 virtual_network_name = ""
 

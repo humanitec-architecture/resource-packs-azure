@@ -4,6 +4,3 @@ principal_id = ""
 
 role_definition_ids = ""
 scopes              = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

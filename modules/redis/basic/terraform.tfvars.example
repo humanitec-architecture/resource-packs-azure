@@ -3,9 +3,6 @@ app_id = ""
 # The size of the Redis cache to deploy.
 capacity = 2
 
-# Enable the non-SSL port
-enable_non_ssl_port = false
-
 env_id = ""
 
 # The SKU family/pricing group to use.
@@ -27,6 +24,3 @@ resource_group_name = ""
 
 # The SKU of Redis to use.
 sku_name = "Standard"
-
-# The Subscription ID which should be used.
-subscription_id = ""

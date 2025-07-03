@@ -1,8 +1,3 @@
-variable "subscription_id" {
-  description = "The Subscription ID which should be used."
-  type        = string
-}
-
 variable "res_id" {
   type = string
 }
@@ -48,12 +43,6 @@ variable "sku_name" {
   description = "The SKU of Redis to use."
   type        = string
   default     = "Standard"
-}
-
-variable "enable_non_ssl_port" {
-  description = "Enable the non-SSL port"
-  type        = bool
-  default     = false
 }
 
 variable "minimum_tls_version" {

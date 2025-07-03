@@ -24,6 +24,3 @@ resource_group_name = ""
 
 # Specifies the subject for this Federated Identity Credential.
 subject = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

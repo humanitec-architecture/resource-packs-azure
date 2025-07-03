@@ -31,7 +31,6 @@
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resource will reside. | `string` | n/a | yes |
 | subdomain | The subdomain of the DNS name that the DNS record is for. | `string` | n/a | yes |
-| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | ip\_address | The IPv4 address that the DNS name should resolve to. | `string` | `""` | no |
 | ipv6\_address | The IPv6 address that the DNS name should resolve to. | `string` | `""` | no |
 | name | A valid fully qualified domain name that the DNS name should resolve to. | `string` | `""` | no |

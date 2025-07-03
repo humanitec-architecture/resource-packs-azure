@@ -27,7 +27,6 @@
 | host | The private IP address of the PostgreSQL Flexible Server Database | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | server\_id | The ID of the Azure PostgreSQL Flexible Server from which to create this PostgreSQL Flexible Server Database | `string` | n/a | yes |
-| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | database\_name | Specifies the name for the created database | `string` | `""` | no |
 
 ### Outputs

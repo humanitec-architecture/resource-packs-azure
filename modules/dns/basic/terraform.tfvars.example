@@ -21,6 +21,3 @@ resource_group_name = ""
 
 # The subdomain of the DNS name that the DNS record is for.
 subdomain = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

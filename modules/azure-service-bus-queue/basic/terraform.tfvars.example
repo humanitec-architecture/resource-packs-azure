@@ -14,6 +14,3 @@ resource_group_name = ""
 
 # Defines which tier to use.
 sku = "Standard"
-
-# The Subscription ID which should be used.
-subscription_id = ""
