@@ -1,8 +1,3 @@
-variable "subscription_id" {
-  description = "The Subscription ID which should be used."
-  type        = string
-}
-
 variable "res_id" {
   type = string
 }

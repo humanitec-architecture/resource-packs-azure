@@ -27,7 +27,6 @@
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
-| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | account\_replication\_type | Defines the type of replication to use for this storage account. | `string` | `"GRS"` | no |
 | account\_tier | Defines the Tier to use for this storage account. | `string` | `"Standard"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |

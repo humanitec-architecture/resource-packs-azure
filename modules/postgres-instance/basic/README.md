@@ -43,7 +43,6 @@
 | sku\_name | Specifies the SKU Name for this PostgreSQL Server. | `string` | n/a | yes |
 | storage\_mb | Max storage allowed for a server. | `number` | n/a | yes |
 | subnet\_name | The name of the Subnet from which Private IP Addresses will be allocated for this Private Endpoint. | `string` | n/a | yes |
-| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | virtual\_network\_name | The name of the virtual network where Private Endpoint will be allocated. | `string` | n/a | yes |
 | workload\_resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |

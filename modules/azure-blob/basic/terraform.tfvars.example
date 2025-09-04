@@ -15,6 +15,3 @@ res_id = ""
 
 # The Name of the Storage Account which should be used for the Container.
 storage_account_name = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

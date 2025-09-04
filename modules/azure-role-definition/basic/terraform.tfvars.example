@@ -19,6 +19,3 @@ res_id = ""
 
 # The scope at which the Role Definition applies to.
 scope = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

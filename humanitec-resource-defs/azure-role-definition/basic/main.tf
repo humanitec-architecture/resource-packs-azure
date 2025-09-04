@@ -27,7 +27,6 @@ resource "humanitec_resource_definition" "main" {
         res_id = "$${context.res.id}"
         app_id = "$${context.app.id}"
         env_id = "$${context.env.id}"
-        prefix = var.prefix
 
         name            = var.name
         subscription_id = var.subscription_id

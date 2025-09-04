@@ -15,6 +15,3 @@ res_id = ""
 
 # The ID of the Azure PostgreSQL Flexible Server from which to create this PostgreSQL Flexible Server Database
 server_id = ""
-
-# The Subscription ID which should be used.
-subscription_id = ""

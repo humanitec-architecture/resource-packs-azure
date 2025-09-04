@@ -27,9 +27,7 @@
 | env\_id | n/a | `string` | n/a | yes |
 | res\_id | n/a | `string` | n/a | yes |
 | resource\_group\_name | Specifies the Name of the Resource Group within which created resources will reside. | `string` | n/a | yes |
-| subscription\_id | The Subscription ID which should be used. | `string` | n/a | yes |
 | capacity | The size of the Redis cache to deploy. | `number` | `2` | no |
-| enable\_non\_ssl\_port | Enable the non-SSL port | `bool` | `false` | no |
 | family | The SKU family/pricing group to use. | `string` | `"C"` | no |
 | minimum\_tls\_version | The minimum TLS version. | `string` | `"1.2"` | no |
 | name | Specifies the Name for created resources. (Leave empty for the default one) | `string` | `""` | no |
