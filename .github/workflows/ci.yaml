@@ -20,7 +20,7 @@ jobs:
       - name: Install terraform-docs
         run: |
           WORK_DIR=$(mktemp -d)
-          curl -Lo ${WORK_DIR}/terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-$(uname)-amd64.tar.gz
+          curl -Lo ${WORK_DIR}/terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.20.0/terraform-docs-v0.20.0-$(uname)-amd64.tar.gz
           cd ${WORK_DIR}
           tar -xzf terraform-docs.tar.gz
           chmod +x terraform-docs
